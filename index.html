@@ -35,7 +35,6 @@ box-sizing: border-box;
 --card-bg: #ffffff; /* panel putih */
 --footer-bg: #003366;
 --text-dark: #000000;
---text-mid: #444444;
 --text-soft: #555555;
 --shadow-card: 0 3px 8px rgba(0,0,0,0.12);
 }
@@ -53,7 +52,11 @@ background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
 /* ===================================== */
 header {
 width: 100%;
-background: linear-gradient(to right, rgba(234,243,255,0.9), rgba(255,255,255,0.9));
+background: linear-gradient(
+to right,
+rgba(234,243,255,0.8),
+rgba(255,255,255,0.8)
+);
 box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 position: sticky;
 top: 0;
@@ -64,6 +67,7 @@ align-items: center;
 justify-content: space-between;
 padding: 12px 5%;
 flex-wrap: wrap;
+backdrop-filter: blur(4px);
 }
 
 /* kiri: logo */
@@ -73,18 +77,37 @@ align-items: center;
 gap: 12px;
 }
 
+/*
+LOGO FIX:
+- Besar
+- Cuba “hilangkan kotak putih keras”
+- Lembutkan tepi dengan mask gradient + shadow lembut
+*/
+.brand-logo-wrapper {
+position: relative;
+display: inline-block;
+border-radius: 16px;
+overflow: hidden; /* potong sudut supaya tak nampak petak */
+box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+background: radial-gradient(
+circle at 50% 50%,
+rgba(255,255,255,0) 40%,
+rgba(255,255,255,0.6) 100%
+);
+}
+
 .brand-logo {
-width: 200px; /* LOGO BESAR */
+display: block;
+width: 200px; /* besar */
 height: auto;
 object-fit: contain;
 
-/* Cuba minimakan effect "kotak putih" pada logo asal */
-background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.4) 100%);
-border-radius: 16px;
+/* kecilkan rasa putih dan bagi warna lebih “naik” */
 filter:
 brightness(1.08)
-drop-shadow(0 4px 8px rgba(0,0,0,0.28))
-contrast(1.05);
+contrast(1.07)
+saturate(1.15)
+drop-shadow(0 3px 6px rgba(0,0,0,0.35));
 }
 
 /* kanan: menu nav */
@@ -124,11 +147,11 @@ max-width: 900px;
 margin: 0 auto;
 }
 
-/* MEDAKOM SDN. BHD. BESAR SATU KALI SAHAJA */
+/* MEDAKOM SDN. BHD. SATU KALI DI TENGAH */
 .hero-company-name {
-font-size: 3.2rem; /* besar 3x dari slogan */
+font-size: 3.2rem;
 font-weight: 800;
-color: var(--text-dark); /* hitam pekat */
+color: var(--text-dark); /* hitam */
 letter-spacing: 2px;
 text-transform: uppercase;
 margin-bottom: 20px;
@@ -138,7 +161,7 @@ line-height: 1.2;
 .hero-main-line {
 font-size: 1.6rem;
 font-weight: 600;
-color: var(--deep-blue); /* biru korporat */
+color: var(--deep-blue); /* biru untuk "Empowering..." */
 line-height: 1.4;
 }
 
@@ -169,7 +192,7 @@ background-image: linear-gradient(to bottom, #a81818, #7f1212);
 }
 
 /* ===================================== */
-/* GENERIC SECTION BLOCKS */
+/* GENERIC SECTIONS */
 /* ===================================== */
 section {
 width: 100%;
@@ -199,7 +222,7 @@ letter-spacing: 0.5px;
 
 .section-subtext {
 font-size: 0.95rem;
-color: var(--text-mid);
+color: #444;
 text-align: center;
 margin: -10px auto 30px auto;
 line-height: 1.6;
@@ -309,10 +332,8 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-
 background: rgba(0,0,0,0.8);
-
-display: none; /* hidden default */
+display: none;
 align-items: center;
 justify-content: center;
 padding: 20px;
@@ -402,6 +423,10 @@ gap: 16px;
 flex-direction: column;
 }
 
+.brand-logo-wrapper {
+border-radius: 14px;
+}
+
 .brand-logo {
 width: 180px;
 }
@@ -460,16 +485,16 @@ height: 130px;
 
 <body>
 
-<!-- ===================================== -->
 <!-- HEADER -->
-<!-- ===================================== -->
 <header>
-<!-- LOGO KIRI SAHAJA -->
+<!-- LOGO KIRI (tanpa tulisan syarikat sebelah dia) -->
 <div class="brand-block">
+<div class="brand-logo-wrapper">
 <img src="IMG_6349.jpeg" alt="Medakom Logo" class="brand-logo" />
 </div>
+</div>
 
-<!-- MENU KANAN -->
+<!-- MENU KANAN (TIADA ▼) -->
 <nav>
 <ul>
 <li><a href="#home">Home</a></li>
@@ -483,9 +508,7 @@ height: 130px;
 </nav>
 </header>
 
-<!-- ===================================== -->
-<!-- HERO / COMPANY NAME (SATU KALI SAJA) -->
-<!-- ===================================== -->
+<!-- HERO -->
 <section id="home">
 <div class="hero-wrapper">
 <div class="hero-company-name">
@@ -504,9 +527,7 @@ Sustainable Environment for Future Generations
 </div>
 </section>
 
-<!-- ===================================== -->
 <!-- CORE VALUES -->
-<!-- ===================================== -->
 <section id="corevalues">
 <div class="block-card">
 <div class="section-title">Core Values</div>
@@ -525,9 +546,7 @@ Sustainable Environment for Future Generations
 </div>
 </section>
 
-<!-- ===================================== -->
-<!-- KEY STRENGTH -->
-<!-- ===================================== -->
+<!-- SERVICES / KEY STRENGTH -->
 <section id="services">
 <div class="block-card">
 <div class="section-title">Our Services / Key Strength</div>
@@ -543,9 +562,7 @@ Sustainable Environment for Future Generations
 </div>
 </section>
 
-<!-- ===================================== -->
 <!-- LEADERSHIP -->
-<!-- ===================================== -->
 <section id="leadership">
 <div class="block-card">
 <div class="section-title">Leadership</div>
@@ -625,9 +642,7 @@ Medakom Group.
 </div>
 </section>
 
-<!-- ===================================== -->
 <!-- VISION & MISSION -->
-<!-- ===================================== -->
 <section id="vision">
 <div class="block-card">
 <div class="section-title">Vision &amp; Mission</div>
@@ -640,9 +655,7 @@ Medakom Group.
 </div>
 </section>
 
-<!-- ===================================== -->
-<!-- GALLERY (20 IMAGES + LIGHTBOX) -->
-<!-- ===================================== -->
+<!-- GALLERY -->
 <section id="gallery">
 <div class="block-card">
 <div class="section-title">Company Gallery</div>
@@ -658,79 +671,60 @@ Tap / click any image to view.
 <a href="#" onclick="openLightbox('images_Page_01.jpg');return false;">
 <img src="images_Page_01.jpg" alt="Medakom photo 1" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_02.jpg');return false;">
 <img src="images_Page_02.jpg" alt="Medakom photo 2" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_03.jpg');return false;">
 <img src="images_Page_03.jpg" alt="Medakom photo 3" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_04.jpg');return false;">
 <img src="images_Page_04.jpg" alt="Medakom photo 4" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_05.jpg');return false;">
 <img src="images_Page_05.jpg" alt="Medakom photo 5" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_06.jpg');return false;">
 <img src="images_Page_06.jpg" alt="Medakom photo 6" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_07.jpg');return false;">
 <img src="images_Page_07.jpg" alt="Medakom photo 7" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_08.jpg');return false;">
 <img src="images_Page_08.jpg" alt="Medakom photo 8" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_09.jpg');return false;">
 <img src="images_Page_09.jpg" alt="Medakom photo 9" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_10.jpg');return false;">
 <img src="images_Page_10.jpg" alt="Medakom photo 10" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_11.jpg');return false;">
 <img src="images_Page_11.jpg" alt="Medakom photo 11" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_12.jpg');return false;">
 <img src="images_Page_12.jpg" alt="Medakom photo 12" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_13.jpg');return false;">
 <img src="images_Page_13.jpg" alt="Medakom photo 13" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_14.jpg');return false;">
 <img src="images_Page_14.jpg" alt="Medakom photo 14" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_15.jpg');return false;">
 <img src="images_Page_15.jpg" alt="Medakom photo 15" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_16.jpg');return false;">
 <img src="images_Page_16.jpg" alt="Medakom photo 16" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_17.jpg');return false;">
 <img src="images_Page_17.jpg" alt="Medakom photo 17" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_18.jpg');return false;">
 <img src="images_Page_18.jpg" alt="Medakom photo 18" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_19.jpg');return false;">
 <img src="images_Page_19.jpg" alt="Medakom photo 19" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_20.jpg');return false;">
 <img src="images_Page_20.jpg" alt="Medakom photo 20" class="gallery-thumb" />
 </a>
@@ -746,9 +740,7 @@ Tap / click any image to view.
 </div>
 </div>
 
-<!-- ===================================== -->
 <!-- CONTACT -->
-<!-- ===================================== -->
 <section id="contact">
 <div class="block-card">
 <div class="section-title">Contact Us</div>
@@ -783,17 +775,13 @@ Danum Sinar Land, Lakin / Klayan Estate,
 </div>
 </section>
 
-<!-- ===================================== -->
 <!-- FOOTER -->
-<!-- ===================================== -->
 <footer>
 <div>© 2025 MEDAKOM SDN. BHD. — All Rights Reserved</div>
 <div>Designed by Shella Chong</div>
 </footer>
 
-<!-- ===================================== -->
 <!-- LIGHTBOX SCRIPT -->
-<!-- ===================================== -->
 <script>
 function openLightbox(imgSrc) {
 var overlay = document.getElementById('lightboxOverlay');
@@ -802,11 +790,4 @@ img.src = imgSrc;
 overlay.classList.add('active');
 }
 
-function closeLightbox() {
-var overlay = document.getElementById('lightboxOverlay');
-overlay.classList.remove('active');
-}
-</script>
-
-</body>
-</html>
+function closeLight
