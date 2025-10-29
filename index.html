@@ -22,6 +22,7 @@
 --card-bg: #ffffff;
 --card-border: #dcdcdc;
 --shadow-card: 0 10px 24px rgba(0,0,0,0.07);
+--overlay-bg: rgba(0,0,0,0.8);
 }
 
 * {
@@ -58,50 +59,33 @@ max-width: 1200px;
 margin: 0 auto;
 padding: 12px 16px;
 display: flex;
-align-items: flex-start;
+align-items: center;
 justify-content: space-between;
 flex-wrap: wrap;
 row-gap: 12px;
 }
 
-/* LEFT: logo */
+/* LEFT: logo BESAR, tegak */
 .brand-left {
 display: flex;
-align-items: flex-start;
-gap: 12px;
+align-items: center;
 min-width: 120px;
 }
 
 .brand-left img {
-width: 85px; /* BIG logo */
+width: 85px; /* besar */
 height: auto;
 object-fit: contain;
 background: transparent;
 border-radius: 0;
+transform: rotate(0deg); /* pastikan tak senget */
 }
 
-/* CENTER: big company name in header bar */
-.brand-center {
-flex: 1;
-text-align: center;
-min-width: 200px;
-}
-
-.brand-center .company-header-name {
-font-size: 1rem;
-font-weight: 600;
-letter-spacing: 0.06em;
-color: var(--text-dark);
-text-transform: uppercase; /* ALL CAPS */
-line-height: 1.3;
-}
-
-/* RIGHT: menu */
+/* CENTER: menu */
 nav {
-min-width: 200px;
+flex: 1;
 display: flex;
-justify-content: flex-end;
-flex-wrap: wrap;
+justify-content: center;
 }
 
 .menu-row {
@@ -143,24 +127,29 @@ color: var(--accent-red);
 transform: rotate(180deg);
 }
 
+/* RIGHT: kosong placeholder supaya layout seimbang kiri-kanan */
+.brand-right {
+width: 85px; /* sama luas logo kiri supaya center betul² */
+}
+
 /* ===========================
 HERO SECTION
 =========================== */
 .hero {
 max-width: 1200px;
-margin: 24px auto 32px auto;
+margin: 24px auto 24px auto;
 padding: 0 16px;
 text-align: center;
 }
 
-/* BIG COMPANY NAME above slogan */
-.hero .hero-company {
-font-size: 1.2rem;
+/* COMPANY NAME BESAR DI ATAS EMPOWERING */
+.hero-company {
+font-size: 1.1rem;
 font-weight: 700;
 color: var(--text-dark);
 letter-spacing: 0.08em;
 text-transform: uppercase; /* ALL CAPS */
-margin-bottom: 12px;
+margin-bottom: 16px;
 line-height: 1.4;
 }
 
@@ -170,12 +159,14 @@ font-weight: 600;
 color: var(--text-dark);
 margin-bottom: 8px;
 line-height: 1.3;
+text-align: center;
 }
 
 .hero-tagline {
 color: #2e3b50;
 font-size: .95rem;
 margin-bottom: 20px;
+text-align: center;
 }
 
 .hero-actions {
@@ -201,12 +192,12 @@ text-decoration: none;
 .btn-main:hover { background-color: var(--accent-red-hover); }
 
 /* ===========================
-CONTENT PANELS (click menu)
+CONTENT PANELS
 =========================== */
 main {
 max-width: 1200px;
 margin: 0 auto 60px auto;
-padding: 0 16px;
+padding: 0 16px 40px;
 }
 
 .panel {
@@ -216,7 +207,7 @@ border-radius: 10px;
 box-shadow: var(--shadow-card);
 padding: 24px 20px 28px;
 margin-bottom: 20px;
-display: none; /* hidden by default */
+display: none;
 animation: fadein .3s ease;
 }
 .panel.active {
@@ -236,7 +227,7 @@ text-transform: uppercase;
 letter-spacing: 0.05em;
 margin-bottom: 16px;
 line-height: 1.3;
-text-align: center;
+text-align: left;
 }
 
 .subhead {
@@ -275,7 +266,9 @@ line-height: 1.6;
 padding-left: 20px;
 }
 
-/* Gallery grid (thumbnails) */
+/* ===========================
+GALLERY (click to zoom)
+=========================== */
 .gallery-grid {
 display: flex;
 flex-wrap: wrap;
@@ -283,6 +276,7 @@ gap: 10px;
 justify-content: center;
 margin-top: 16px;
 }
+
 .gallery-grid img {
 width: 140px;
 height: auto;
@@ -290,9 +284,62 @@ border-radius: 6px;
 box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 background-color: #fff;
 object-fit: cover;
+cursor: pointer;
+transition: .15s;
+}
+.gallery-grid img:hover {
+box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Contact block paragraphs tighter */
+/* LIGHTBOX OVERLAY */
+.lightbox-overlay {
+position: fixed;
+inset: 0;
+background: var(--overlay-bg);
+display: none;
+align-items: center;
+justify-content: center;
+z-index: 9999;
+padding: 20px;
+}
+
+.lightbox-overlay.active {
+display: flex;
+}
+
+.lightbox-inner {
+position: relative;
+max-width: 90vw;
+max-height: 90vh;
+background: #000;
+border-radius: 8px;
+box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+overflow: hidden;
+}
+
+.lightbox-img {
+max-width: 100%;
+max-height: 90vh;
+display: block;
+object-fit: contain;
+}
+
+.lightbox-close {
+position: absolute;
+top: 8px;
+right: 12px;
+background: rgba(0,0,0,0.6);
+color: #fff;
+border: 0;
+border-radius: 4px;
+padding: 6px 10px;
+font-size: .8rem;
+cursor: pointer;
+}
+
+/* ===========================
+CONTACT BLOCK
+=========================== */
 .contact-block p {
 margin-bottom: 10px;
 font-size: .9rem;
@@ -332,31 +379,36 @@ RESPONSIVE
 =========================== */
 @media(max-width:900px){
 .nav-wrapper {
-flex-direction: column;
-align-items: center;
-text-align: center;
+flex-wrap: wrap;
+justify-content: center;
+row-gap: 16px;
+}
+
+.brand-left {
+order: 1;
+justify-content: center;
 }
 
 nav {
-order: 3;
+order: 2;
 width: 100%;
 justify-content: center;
+}
+
+.brand-right {
+display: none;
 }
 
 .menu-row {
 justify-content: center;
 }
 
-.brand-left {
-order: 1;
+.hero-company {
+font-size: 1rem;
 }
 
-.brand-center {
-order: 2;
-}
-
-.brand-center .company-header-name {
-font-size: .9rem;
+.hero-headline {
+font-size: 1.4rem;
 }
 }
 </style>
@@ -368,17 +420,12 @@ font-size: .9rem;
 <header>
 <div class="nav-wrapper">
 
-<!-- LEFT: LOGO M BESAR -->
+<!-- LEFT: LOGO BESAR TEGAK -->
 <div class="brand-left">
 <img src="IMG_6349.jpeg" alt="Medakom Logo">
 </div>
 
-<!-- CENTER: NAMA SYARIKAT (ALL CAPS) -->
-<div class="brand-center">
-<div class="company-header-name">MEDAKOM SDN. BHD.</div>
-</div>
-
-<!-- RIGHT: MENU DENGAN ▼ -->
+<!-- CENTER: MENU -->
 <nav>
 <ul class="menu-row">
 
@@ -402,7 +449,7 @@ Leadership <span class="arrow">▼</span>
 
 <li>
 <button class="menu-btn" data-target="panel-vision">
-Vision <span class="arrow">▼</span>
+Vision &amp; Mission <span class="arrow">▼</span>
 </button>
 </li>
 
@@ -427,6 +474,9 @@ Contact <span class="arrow">▼</span>
 </ul>
 </nav>
 
+<!-- RIGHT: kosong untuk balance -->
+<div class="brand-right"></div>
+
 </div>
 </header>
 
@@ -447,39 +497,36 @@ Contact <span class="arrow">▼</span>
 
 <!-- HOME PANEL -->
 <section id="panel-home" class="panel active">
-<div class="section-title">Company Highlights</div>
-
-<div class="subhead">Core Values</div>
+<div class="section-title">Core Values</div>
 <ul>
-<li><b>People-Oriented</b> — Mutual respect, fair and equal treatment of all workers.</li>
-<li><b>Integrity</b> — Transparency, compliance, and trust with clients and workers.</li>
-<li><b>Professionalism</b> — We deliver what we promise, with discipline and accountability.</li>
-<li><b>Efficiency</b> — Structured execution and operational clarity.</li>
-<li><b>Go-Green</b> — Sustainability and responsibility for future generations.</li>
+<li><b>Integrity &amp; Compliance</b> — We operate with transparency and follow Malaysian labour and industry standards.</li>
+<li><b>Human Responsibility</b> — We believe every worker deserves respect, safety, fair administration, and dignity at work.</li>
+<li><b>Sustainability</b> — We focus on long-term workforce stability, not just short-term placement.</li>
+<li><b>Reliability</b> — We deliver manpower solutions that keep client operations running with control.</li>
+<li><b>Partnership Mindset</b> — We build relationships, not just contracts.</li>
 </ul>
 
-<div class="subhead">Key Strength</div>
+<div class="section-title">Key Strength</div>
 <ul>
-<li>20+ years of HR contracting, workforce supervision, and client compliance support.</li>
-<li>Hands-on site management (not just agency paperwork).</li>
-<li>Ability to deploy, supervise and maintain labour at scale, especially in demanding sectors.</li>
-<li>Cost-effective manpower models to stabilize production and reduce overhead for clients.</li>
-<li>Strong presence in Sabah, Sarawak, and Peninsular Malaysia.</li>
+<li>Deep experience in industries with high labour demand: plantation, palm oil, timber, cleaning, factory, construction, logistics.</li>
+<li>We manage both local and foreign workers, including documentation, supervision, discipline, production line and site control.</li>
+<li>Hands-on operating model — not just agency paperwork; we run and supervise people on-site.</li>
+<li>Cost-effective solutions to help clients reduce overhead while keeping output stable and compliant.</li>
 </ul>
 
-<div class="subhead">Nature of Business</div>
+<div class="section-title">Nature of Business</div>
 <ul>
-<li>Manpower Supply & HR Contracting</li>
-<li>Outsourcing & Workforce / Site Management</li>
-<li>Timber Trading & Softwood Supply</li>
+<li>Manpower Supply &amp; HR Contracting</li>
+<li>Outsourcing &amp; Workforce / Site Management</li>
+<li>Industrial Cleaning &amp; G7 Facility Maintenance</li>
+<li>Timber Trading &amp; Softwood Supply</li>
+<li>Quarry &amp; River Sand Logistics / Barge &amp; Shipment Handling</li>
 <li>Palm Oil Contractor / Estate Operations Support</li>
-<li>Quarry & River Sand Logistics & Barge/Shipment Handling</li>
-<li>Manufacturing Line Support, Scrap Handling & Plant Housekeeping</li>
-<li>Reforestation / Forestry Management & Compliance Support</li>
-<li>Industrial Cleaning & G7 Facility Maintenance</li>
+<li>Manufacturing Line Support, Scrap Handling &amp; Plant Housekeeping</li>
+<li>Reforestation / Forestry Management &amp; Compliance Support</li>
 </ul>
 
-<div class="subhead">Track Record Recruitment</div>
+<div class="section-title">Track Record Recruitment</div>
 <p>
 We have supported multi-year contracts in manpower placement, plantation/estate labour,
 production line support, logistics handling, cleaning, and site compliance. We maintain long-term
@@ -488,7 +535,7 @@ plantation rehabilitation, quarry/sand movement, and infrastructure support. We 
 reliably through disciplined attendance, supervision and output control.
 </p>
 
-<div class="subhead">Organization Chart</div>
+<div class="section-title">Organization Chart</div>
 <p><b>Executive Direction:</b></p>
 <ul>
 <li><b>Chief Executive Officer (CEO):</b> Mr. Andrew Chong (Aidil Chong)</li>
@@ -496,12 +543,12 @@ reliably through disciplined attendance, supervision and output control.
 </ul>
 <p><b>Core Functional Units:</b></p>
 <ul>
-<li>Human Resource & Manpower Deployment</li>
-<li>Operations & Site Supervision</li>
+<li>Human Resource &amp; Manpower Deployment</li>
+<li>Operations &amp; Site Supervision</li>
 <li>Logistics / Fleet / Barge Coordination</li>
-<li>Finance & Compliance Administration</li>
-<li>Client Liaison & Account Management</li>
-<li>Safety & Field Discipline / Site Control</li>
+<li>Finance &amp; Compliance Administration</li>
+<li>Client Liaison &amp; Account Management</li>
+<li>Safety &amp; Field Discipline / Site Control</li>
 </ul>
 </section>
 
@@ -546,30 +593,30 @@ and responsible labour deployment.
 <div class="subhead">CEO’s Background</div>
 <ul>
 <li>Higher Diploma in Accounting (1990), London Chamber of Commerce and Industry (LCCI)</li>
-<li>30+ years: Human Resources & Manpower Consulting</li>
+<li>30+ years: Human Resources &amp; Manpower Consulting</li>
 <li>30 years: Manufacturing / Construction / Scrap / Factory Process Management</li>
-<li>20 years: Logistics, Trading & Shipment / Barge Agency</li>
-<li>18 years: G7 Cleaning & Facility Services Management</li>
-<li>10 years: Palm Oil Management, Plantation & Field Operations</li>
-<li>Active in Timber / Softwood Trading, Quarry & River Sand Trading, Reforestation Support</li>
+<li>20 years: Logistics, Trading &amp; Shipment / Barge Agency</li>
+<li>18 years: G7 Cleaning &amp; Facility Services Management</li>
+<li>10 years: Palm Oil Management, Plantation &amp; Field Operations</li>
+<li>Active in Timber / Softwood Trading, Quarry &amp; River Sand Trading, Reforestation Support</li>
 </ul>
 
 <div class="subhead">Director’s Profile — Mrs. Melawati (Shella Chong)</div>
 <p><b>Educational Background</b></p>
 <ul>
 <li>Bachelor of Management (2014) — Sekolah Tinggi Ilmu Ekonomi (STIE–ISM), GPA 3.27</li>
-<li>Business & Office Administration (2008) — SMK PGRI Rangkasbitung, GPA 3.35</li>
+<li>Business &amp; Office Administration (2008) — SMK PGRI Rangkasbitung, GPA 3.35</li>
 <li>Certificate of Internship — RSUD Adjidarmo Rangkasbitung (Office Administration), GPA 4.00</li>
-<li>Certificate of Competence — Academic Secretariat & Management (LEPISI)</li>
-<li>Currently pursuing MBA (Human Capital Management), International University of Malaya–Wales (IUMW), Malaysia</li>
+<li>Certificate of Competence — Academic Secretariat &amp; Management (LEPISI)</li>
+<li>Currently Pursuing Master In Business Administration (Human Capital Management), At International University of Malaya–Wales (IUMW), Malaysia</li>
 </ul>
 
 <p><b>Professional Experience</b></p>
 <ul>
-<li>2017–2025 — Director, Medakom Sdn. Bhd. (Malaysia) — Manpower supply, outsourcing, timber trading, manufacturing process, logistics for quarry & palm oil, forestry/reforestation contracting.</li>
-<li>2021–2025 — Director, SS Beauty Legacy Sdn. Bhd. (Malaysia) — Design services, wholesale & retail operations, product distribution.</li>
+<li>2017–2025 — Director, Medakom Sdn. Bhd. (Malaysia) — Manpower supply, outsourcing, timber trading, manufacturing process, logistics for quarry &amp; palm oil, forestry/reforestation contracting.</li>
+<li>2021–2025 — Director, SS Beauty Legacy Sdn. Bhd. (Malaysia) — Design services, wholesale &amp; retail operations, product distribution.</li>
 <li>2022–2025 — Director, Mepacom Sdn. Bhd. (Malaysia) — General cleaning services, traditional wellness and reflexology centre operations.</li>
-<li>2008–2015 — Administrative & Guest Relation / Purchasing / Finance / Hospitality roles in Indonesia (Novotel Tangerang City, Matahari Dept. Store Puri Mall Jakarta Barat, PT. Kresna Reksa Finance Banten, etc.)</li>
+<li>2008–2015 — Administrative &amp; Guest Relation / Purchasing / Finance / Hospitality roles in Indonesia (Novotel Tangerang City, Matahari Dept. Store Puri Mall Jakarta Barat, PT. Kresna Reksa Finance Banten, etc.)</li>
 </ul>
 
 <p><b>Leadership Philosophy</b></p>
@@ -583,7 +630,7 @@ and respect for workers while meeting business performance targets.
 
 <!-- VISION PANEL -->
 <section id="panel-vision" class="panel">
-<div class="section-title">Vision & Mission</div>
+<div class="section-title">Vision &amp; Mission</div>
 <p><b>Vision:</b> To be a trusted HR and manpower management partner delivering integrated, ethical, and sustainable workforce solutions across Malaysia’s key industries.</p>
 <p><b>Mission:</b> To provide dependable labour solutions, structured deployment, compliance-based management, and long-term partnership value — empowering both people and businesses to grow together.</p>
 </section>
@@ -592,11 +639,11 @@ and respect for workers while meeting business performance targets.
 <section id="panel-services" class="panel">
 <div class="section-title">Our Services</div>
 <ul>
-<li>Manpower Supply & HR Contracting</li>
-<li>Outsourcing & Logistics Management</li>
-<li>Timber Trading & Construction (G7)</li>
-<li>Palm Oil & Forestry / Reforestation Management</li>
-<li>Cleaning & Manufacturing Workforce Support</li>
+<li>Manpower Supply &amp; HR Contracting</li>
+<li>Outsourcing &amp; Logistics Management</li>
+<li>Timber Trading &amp; Construction (G7)</li>
+<li>Palm Oil &amp; Forestry / Reforestation Management</li>
+<li>Cleaning &amp; Manufacturing Workforce Support</li>
 </ul>
 </section>
 
@@ -604,6 +651,7 @@ and respect for workers while meeting business performance targets.
 <section id="panel-gallery" class="panel">
 <div class="section-title">Company Gallery</div>
 <p>Field operations, workforce deployment, logistics support, plantation and reforestation activity.</p>
+
 <div class="gallery-grid">
 <img src="images_Page_01.jpg" alt="Medakom photo 1" />
 <img src="images_Page_02.jpg" alt="Medakom photo 2" />
@@ -652,6 +700,14 @@ Danum Sinar Land, Lakin / Klayan Estate,<br>
 
 </main>
 
+<!-- LIGHTBOX OVERLAY UNTUK GALLERY -->
+<div class="lightbox-overlay" id="lightbox">
+<div class="lightbox-inner">
+<button class="lightbox-close" id="lightboxClose">Close ✕</button>
+<img class="lightbox-img" id="lightboxImg" src="" alt="Preview">
+</div>
+</div>
+
 <!-- ================= FOOTER ================= -->
 <footer>
 <div>© 2025 Medakom Sdn. Bhd. — All Rights Reserved</div>
@@ -663,12 +719,11 @@ Danum Sinar Land, Lakin / Klayan Estate,<br>
 const buttons = document.querySelectorAll(".menu-btn");
 const panels = document.querySelectorAll(".panel");
 
-// handle top menu click
+// Menu click = show that section
 buttons.forEach(btn => {
 btn.addEventListener("click", () => {
 const targetId = btn.getAttribute("data-target");
 
-// show the requested panel, hide others
 panels.forEach(panel => {
 if (panel.id === targetId) {
 panel.classList.add("active");
@@ -677,20 +732,17 @@ panel.classList.remove("active");
 }
 });
 
-// update arrow active color / rotate
 buttons.forEach(b => b.classList.remove("active"));
 btn.classList.add("active");
 
-// scroll slight down so panel is visible
 const panelEl = document.getElementById(targetId);
 panelEl.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 });
 
-// Contact Us button in hero jumps to Contact panel
+// Contact Us button goes to Contact section
 const contactBtn = document.getElementById("openContactBtn");
 contactBtn.addEventListener("click", () => {
-// show contact panel
 panels.forEach(panel => {
 if (panel.id === "panel-contact") {
 panel.classList.add("active");
@@ -699,7 +751,6 @@ panel.classList.remove("active");
 }
 });
 
-// set Contact button active state
 buttons.forEach(b => {
 if (b.getAttribute("data-target") === "panel-contact") {
 b.classList.add("active");
@@ -708,11 +759,36 @@ b.classList.remove("active");
 }
 });
 
-// scroll to contact info
 document.getElementById("panel-contact").scrollIntoView({
 behavior: "smooth",
 block: "start"
 });
+});
+
+// GALLERY LIGHTBOX
+const galleryImgs = document.querySelectorAll(".gallery-grid img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxClose = document.getElementById("lightboxClose");
+
+galleryImgs.forEach(img => {
+img.addEventListener("click", () => {
+lightboxImg.src = img.src;
+lightbox.classList.add("active");
+});
+});
+
+lightboxClose.addEventListener("click", () => {
+lightbox.classList.remove("active");
+lightboxImg.src = "";
+});
+
+lightbox.addEventListener("click", (e) => {
+// click outside image to close
+if (e.target === lightbox) {
+lightbox.classList.remove("active");
+lightboxImg.src = "";
+}
 });
 </script>
 
