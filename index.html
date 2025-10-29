@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Medakom Sdn. Bhd. — Trusted Malaysian manpower, outsourcing, logistics, trading, and reforestation management company.">
-<meta name="keywords" content="Medakom, manpower, outsourcing, HR Malaysia, logistics, timber trading, palm oil, reforestation, cleaning services, HR contracting">
-<meta name="author" content="Shella Chong">
-<meta name="google-site-verification" content="DBCS_jiteplxJtYIRvRMAw297dVduhSunsoYJ3m911mk">
 <title>Medakom Sdn. Bhd | Official Website</title>
+<meta name="description" content="Medakom Sdn. Bhd. — Trusted Malaysian manpower, outsourcing, logistics, timber trading, and reforestation management company.">
+<meta name="author" content="Shella Chong">
 
 <style>
 body {
@@ -21,117 +19,122 @@ overflow-x: hidden;
 /* HEADER */
 header {
 background-color: #ffffff;
-color: #003366;
 display: flex;
 align-items: center;
 justify-content: space-between;
-padding: 12px 50px;
+padding: 12px 40px;
 position: fixed;
-width: 100%;
 top: 0;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-z-index: 10;
+width: 100%;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+z-index: 1000;
 }
 
-header img {
-width: 65px;
+/* Logo kiri */
+header .logo {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+header .logo img {
+width: 55px;
 height: auto;
-border-radius: 10px;
 }
 
-h1 {
+/* Tajuk tengah */
+header h1 {
 flex-grow: 1;
 text-align: center;
-font-size: 1.7rem;
-font-weight: 600;
 color: #002147;
+font-size: 1.6rem;
+font-weight: 600;
 margin: 0;
 }
 
+/* Menu kanan */
 nav {
 display: flex;
-gap: 20px;
+gap: 22px;
 }
 
 nav a {
-color: #002147;
 text-decoration: none;
+color: #002147;
 font-weight: 500;
-transition: 0.3s;
+transition: color 0.3s;
 }
 
 nav a:hover {
 color: #d62828;
 }
 
-/* VIEW MORE BUTTON */
-#toggle {
-display: block;
-text-align: center;
-margin-top: 110px;
-font-size: 1.3rem;
-color: #002147;
-cursor: pointer;
-}
-
-/* HERO SECTION */
+/* Hero section */
 .hero {
+margin-top: 100px;
 text-align: center;
-padding: 80px 20px 40px;
-background: linear-gradient(to bottom, #f8f9fa, #dfe7f2);
+padding: 60px 20px;
+background-color: #f4f6fa;
 }
 
 .hero h2 {
-font-size: 2rem;
 color: #002147;
+font-size: 2rem;
 margin-bottom: 10px;
 }
 
 .hero p {
-font-size: 1.1rem;
 color: #444;
+font-size: 1.1rem;
 margin-bottom: 20px;
 }
 
 .hero button {
-background: #b71c1c;
-color: white;
+background-color: #b71c1c;
+color: #fff;
 border: none;
-padding: 12px 30px;
-border-radius: 5px;
-font-size: 1rem;
+padding: 12px 28px;
+border-radius: 6px;
 cursor: pointer;
 transition: 0.3s;
 }
 
 .hero button:hover {
-background: #8a1313;
+background-color: #8a1313;
 }
 
-/* CONTENT */
+/* Panah ▼ */
+#toggle {
+text-align: center;
+margin-top: 8px;
+font-size: 1.3rem;
+color: #002147;
+cursor: pointer;
+}
+
+/* Kandungan tambahan (CEO + Director) */
 .content {
 display: none;
 background-color: #ffffff;
-padding: 40px 80px;
-text-align: left;
+padding: 40px 60px;
 max-width: 1000px;
-margin: 0 auto 50px;
-box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+margin: 30px auto 60px;
 border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 animation: fadein 1s;
 }
 
 @keyframes fadein {
-from {opacity: 0;}
-to {opacity: 1;}
+from { opacity: 0; }
+to { opacity: 1; }
 }
 
 h3 {
 color: #002147;
 border-bottom: 2px solid #d62828;
 display: inline-block;
-margin-top: 30px;
 padding-bottom: 4px;
+margin-top: 30px;
 }
 
 ul {
@@ -141,17 +144,21 @@ margin-left: 20px;
 
 footer {
 background-color: #002147;
-color: white;
+color: #fff;
 text-align: center;
 padding: 15px;
 font-size: 0.9rem;
-margin-top: 40px;
 }
 
+/* Responsif */
 @media (max-width: 768px) {
 header {
 flex-direction: column;
-gap: 8px;
+gap: 10px;
+padding: 15px;
+}
+header h1 {
+font-size: 1.4rem;
 }
 nav {
 flex-wrap: wrap;
@@ -164,20 +171,20 @@ justify-content: center;
 <body>
 
 <header>
+<div class="logo">
 <img src="https://i.imgur.com/FxRjGqu.png" alt="Medakom Logo">
+</div>
 <h1>Medakom Sdn. Bhd</h1>
 <nav>
 <a href="#">Home</a>
 <a href="#">About</a>
 <a href="#">Leadership</a>
-<a href="#">Vision</a>
+<a href="#">Vision & Mission</a>
 <a href="#">Services</a>
 <a href="#">Gallery</a>
 <a href="#">Contact</a>
 </nav>
 </header>
-
-<div id="toggle">▼ View More</div>
 
 <section class="hero">
 <h2>Empowering People, Building Futures</h2>
@@ -185,12 +192,12 @@ justify-content: center;
 <button>Contact Us</button>
 </section>
 
+<div id="toggle">▼</div>
+
 <section id="info" class="content">
 <h3>CEO’s Message</h3>
-<p>In Medakom, we take pride in being one of Malaysia’s trusted providers of specialized manpower and outsourcing services.
-We are committed to supporting industries that depend heavily on both foreign and local workers by providing ethical, reliable, and cost-effective workforce solutions.</p>
-<p>Our company has built a strong reputation for professionalism and reliability, backed by a talented team of HR experts, consultants, and field specialists.
-Together, we aim to create long-term value for our partners and contribute to Malaysia’s economic growth.</p>
+<p>In Medakom, we take pride in being one of Malaysia’s trusted providers of specialized manpower and outsourcing services. We are committed to supporting industries that depend heavily on both foreign and local workers by providing ethical, reliable, and cost-effective workforce solutions.</p>
+<p>Our company has built a strong reputation for professionalism and reliability, backed by a talented team of HR experts, consultants, and field specialists. Together, we aim to create long-term value for our partners and contribute to Malaysia’s economic growth.</p>
 <p><b>The CEO,</b><br>Mr. Andrew Chong (Aidil Chong)</p>
 
 <h3>CEO’s Background</h3>
@@ -211,8 +218,7 @@ Together, we aim to create long-term value for our partners and contribute to Ma
 </ul>
 
 <h3>Leadership Philosophy</h3>
-<p>Mrs. Melawati (Shella Chong) embodies dedication, discipline, and continuous growth.
-Her leadership focuses on organizational integrity, team empowerment, and sustainable development aligned with Malaysia’s business standards.</p>
+<p>Mrs. Melawati (Shella Chong) embodies dedication, discipline, and continuous growth. Her leadership focuses on organizational integrity, team empowerment, and sustainable development aligned with Malaysia’s business standards.</p>
 </section>
 
 <footer>
@@ -227,7 +233,7 @@ let visible = false;
 toggle.onclick = () => {
 visible = !visible;
 info.style.display = visible ? 'block' : 'none';
-toggle.textContent = visible ? '▲ Hide Info' : '▼ View More';
+toggle.textContent = visible ? '▲' : '▼';
 };
 </script>
 
