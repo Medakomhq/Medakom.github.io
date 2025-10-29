@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- ============================= -->
+<!-- META / SEO / VERIFICATION -->
+<!-- ============================= -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Google Search Console -->
 <meta name="google-site-verification" content="DbCs_jtEPjklYIRVRm0AM297dvhWUh5unOYJJm911mk" />
 
-<!-- SEO -->
+<!-- SEO description -->
 <meta name="description" content="Medakom Sdn. Bhd. — Malaysian manpower supplier and outsourcing company providing HR contracting, logistics, timber trading, palm oil and reforestation management, industrial workforce support, and cleaning services." />
+
 <meta name="keywords" content="Medakom Sdn. Bhd., manpower Malaysia, outsourcing, HR contracting, foreign workers Malaysia, plantation workforce, palm oil contractor, logistics, timber trading, reforestation, cleaning services" />
+
 <meta name="author" content="Shella Chong" />
+
 <meta name="robots" content="index, follow" />
 
 <title>MEDAKOM SDN. BHD. | Official Site</title>
 
+<!-- ============================= -->
+<!-- GLOBAL STYLE (INLINE CSS) -->
+<!-- ============================= -->
 <style>
+/* RESET */
 * {
 margin: 0;
 padding: 0;
@@ -23,30 +33,32 @@ box-sizing: border-box;
 }
 
 :root {
---sky-top: #eaf3ff;
---sky-bottom: #f9fbff;
---deep-blue: #003366;
---mid-blue: #0055a5;
+--sky-top: #eaf3ff; /* biru awan cerah lembut */
+--sky-bottom: #f9fbff; /* putih kebiruan */
+--deep-blue: #002a55; /* biru gelap profesional */
+--mid-blue: #003d7a;
 --accent-red: #b31b1b;
 --accent-red-hover: #8f1616;
 --card-bg: #ffffff;
 --shadow-card: 0 3px 8px rgba(0,0,0,0.12);
---footer-bg: #003366;
+--footer-bg: #002a55;
 }
 
 body {
 font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 line-height: 1.7;
 color: #222;
-background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
+background: linear-gradient(to bottom, var(--sky-top) 0%, var(--sky-bottom) 100%);
 -webkit-font-smoothing: antialiased;
 }
 
-/* HEADER */
+/* ============================= */
+/* HEADER / TOP BAR */
+/* ============================= */
 header {
 width: 100%;
-background: linear-gradient(to bottom right,#eef5ff,#fdfdff);
-box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+background: linear-gradient(to right, rgba(234,243,255,0.9), rgba(249,251,255,0.9));
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 position: sticky;
 top: 0;
 z-index: 1000;
@@ -54,29 +66,32 @@ z-index: 1000;
 display: flex;
 align-items: center;
 justify-content: space-between;
-gap: 20px;
+flex-wrap: wrap;
 
 padding: 12px 4%;
+border-bottom: 2px solid #8f1616; /* garis nipis merah korporat */
 }
 
+/* Kiri: logo + nama korporat */
 .brand-block {
 display: flex;
 align-items: center;
-gap: 15px;
+gap: 16px;
 flex-shrink: 0;
 }
 
-/* LOGO BIG, more pop, no hard box */
+/* logo M: besar, tanpa shadow kotak putih */
 .brand-logo {
-width: 200px; /* lebih besar dari sebelum */
+width: 120px; /* LEBIH BESAR dari versi lama */
 height: auto;
-background: transparent;
 object-fit: contain;
-filter: drop-shadow(0 3px 5px rgba(0,0,0,0.35)); /* bagi logo lebih menonjol */
+background: transparent;
+border-radius: 8px;
+box-shadow: none; /* buang kotak putih tebal feel */
 }
 
 .brand-title {
-font-size: 2.6rem;
+font-size: 2rem; /* besar, kapital */
 font-weight: 800;
 text-transform: uppercase;
 letter-spacing: 2px;
@@ -85,6 +100,7 @@ line-height: 1.2;
 white-space: nowrap;
 }
 
+/* Kanan: menu */
 nav {
 flex-shrink: 0;
 }
@@ -92,9 +108,9 @@ flex-shrink: 0;
 nav ul {
 list-style: none;
 display: flex;
-flex-wrap: nowrap;
+flex-wrap: wrap;
 align-items: center;
-gap: 20px;
+gap: 18px;
 }
 
 nav ul li a {
@@ -109,10 +125,12 @@ nav ul li a:hover {
 color: var(--accent-red);
 }
 
-/* SECTION GENERIC */
+/* ============================= */
+/* GENERIC SECTIONS */
+/* ============================= */
 section {
 width: 100%;
-padding: 60px 10%;
+padding: 50px 6%;
 text-align: center;
 }
 
@@ -120,19 +138,19 @@ text-align: center;
 background-color: var(--card-bg);
 border-radius: 12px;
 box-shadow: var(--shadow-card);
-padding: 40px 30px;
+padding: 32px 24px;
 max-width: 1100px;
-margin: 0 auto 40px auto;
+margin: 0 auto 32px auto;
 text-align: left;
 }
 
 .section-title {
-font-size: 1.8rem;
+font-size: 1.6rem;
 font-weight: 700;
 color: var(--deep-blue);
 text-align: center;
 text-transform: uppercase;
-margin-bottom: 30px;
+margin-bottom: 24px;
 letter-spacing: 0.5px;
 }
 
@@ -162,28 +180,36 @@ margin-bottom: 20px;
 margin-bottom: 12px;
 }
 
-/* HERO */
+/* ============================= */
+/* HERO / HOME */
+/* ============================= */
+
 .hero-wrapper {
 max-width: 900px;
 margin: 0 auto;
 }
 
-/* kita BUANG nama syarikat di sini supaya tak dua kali */
+.hero-company-name {
+font-size: 1.1rem;
+font-weight: 700;
+color: var(--deep-blue);
+letter-spacing: 1px;
+text-transform: uppercase;
+margin-bottom: 12px;
+}
+
 .hero-main-line {
 font-size: 2rem;
 font-weight: 800;
-color: #222;
+color: #000;
 line-height: 1.3;
-text-align: center;
-margin-top: 10px;
 }
 
 .hero-sub-line {
-font-size: 1.1rem;
+font-size: 1.05rem;
 color: #444;
 margin-top: 10px;
 line-height: 1.5;
-text-align: center;
 }
 
 .hero-contact-btn {
@@ -203,7 +229,9 @@ transition: background-color 0.25s;
 background-color: var(--accent-red-hover);
 }
 
+/* ============================= */
 /* LEADERSHIP */
+/* ============================= */
 .leadership-role-title {
 font-size: 1rem;
 font-weight: 700;
@@ -238,7 +266,9 @@ margin-bottom: 20px;
 margin-bottom: 8px;
 }
 
+/* ============================= */
 /* GALLERY */
+/* ============================= */
 .gallery-grid {
 display: flex;
 flex-wrap: wrap;
@@ -268,6 +298,7 @@ background-color: #fff;
 transform: scale(1.05);
 }
 
+/* lightbox overlay */
 .lightbox-overlay {
 position: fixed;
 z-index: 2000;
@@ -276,7 +307,7 @@ left: 0;
 right: 0;
 bottom: 0;
 background: rgba(0,0,0,0.8);
-display: none;
+display: none; /* hidden default */
 align-items: center;
 justify-content: center;
 padding: 20px;
@@ -320,7 +351,9 @@ cursor: pointer;
 box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
+/* ============================= */
 /* CONTACT */
+/* ============================= */
 .contact-line {
 font-size: 0.95rem;
 line-height: 1.6;
@@ -333,11 +366,14 @@ color: var(--mid-blue);
 font-weight: 600;
 text-decoration: none;
 }
+
 .email-link:hover {
 color: var(--accent-red);
 }
 
+/* ============================= */
 /* FOOTER */
+/* ============================= */
 footer {
 background-color: var(--footer-bg);
 color: #fff;
@@ -348,12 +384,14 @@ line-height: 1.6;
 letter-spacing: 0.4px;
 }
 
-/* RESPONSIVE */
+/* ============================= */
+/* RESPONSIVE (HP / tablet) */
+/* ============================= */
 @media (max-width: 900px) {
 header {
-flex-wrap: wrap;
-justify-content: center;
+flex-direction: column;
 text-align: center;
+gap: 16px;
 }
 
 .brand-block {
@@ -361,13 +399,12 @@ flex-direction: column;
 }
 
 .brand-logo {
-width: 180px;
+width: 140px;
 }
 
 .brand-title {
+font-size: 1.6rem;
 text-align: center;
-font-size: 2rem;
-white-space: normal;
 }
 
 nav ul {
@@ -381,12 +418,12 @@ padding: 40px 6%;
 }
 
 .block-card {
-padding: 30px 20px;
-margin-bottom: 30px;
+padding: 24px 18px;
+margin-bottom: 24px;
 }
 
 .section-title {
-font-size: 1.4rem;
+font-size: 1.3rem;
 }
 
 .text-block,
@@ -408,45 +445,63 @@ font-size: 1rem;
 }
 </style>
 </head>
+
 <body>
 
+<!-- ============================= -->
 <!-- HEADER -->
+<!-- ============================= -->
 <header>
+<!-- KIRI: LOGO + NAMA SYARIKAT -->
 <div class="brand-block">
+<!-- Logo M (lebih besar, tanpa shadow kotak).
+NOTE: kalau nanti kamu upload versi PNG transparan,
+ganti src jadi IMG_6349.png -->
 <img src="IMG_6349.jpeg" alt="Medakom Logo" class="brand-logo" />
+
 <div class="brand-title">MEDAKOM SDN. BHD.</div>
 </div>
 
+<!-- KANAN: MENU -->
 <nav>
 <ul>
-<li><a href="#home">Home ▼</a></li>
-<li><a href="#corevalues">About ▼</a></li>
-<li><a href="#leadership">Leadership ▼</a></li>
-<li><a href="#vision">Vision ▼</a></li>
-<li><a href="#services">Services ▼</a></li>
-<li><a href="#gallery">Gallery ▼</a></li>
-<li><a href="#contact">Contact ▼</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#corevalues">About</a></li>
+<li><a href="#leadership">Leadership</a></li>
+<li><a href="#vision">Vision</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 </header>
 
+<!-- ============================= -->
 <!-- HERO / HOME -->
+<!-- ============================= -->
 <section id="home">
 <div class="hero-wrapper">
+<div class="hero-company-name">MEDAKOM SDN. BHD.</div>
+
 <div class="hero-main-line">
 Empowering People, Building Futures
 </div>
+
 <div class="hero-sub-line">
 Sustainable Environment for Future Generations
 </div>
+
 <a href="#contact" class="hero-contact-btn">Contact Us</a>
 </div>
 </section>
 
+<!-- ============================= -->
 <!-- CORE VALUES -->
+<!-- ============================= -->
 <section id="corevalues">
 <div class="block-card">
 <div class="section-title">Core Values</div>
+
 <div class="text-block">
 <p><b>Integrity &amp; Compliance —</b> We operate with transparency and follow Malaysian labour and industry standards.</p>
 <p><b>Human Responsibility —</b> We believe every worker deserves respect, safety, fair administration, and dignity at work.</p>
@@ -457,10 +512,13 @@ Sustainable Environment for Future Generations
 </div>
 </section>
 
+<!-- ============================= -->
 <!-- KEY STRENGTH -->
+<!-- ============================= -->
 <section id="keystrength">
 <div class="block-card">
 <div class="section-title">Key Strength</div>
+
 <div class="bullet-block">
 <p>• Deep experience in industries with high labour demand: plantation, palm oil, timber, cleaning, factory, construction, logistics.</p>
 <p>• We manage both local and foreign workers, including documentation, supervision, discipline, and compliance.</p>
@@ -470,14 +528,18 @@ Sustainable Environment for Future Generations
 </div>
 </section>
 
+<!-- ============================= -->
 <!-- LEADERSHIP -->
+<!-- ============================= -->
 <section id="leadership">
 <div class="block-card">
 <div class="section-title">Leadership</div>
 
+<!-- CEO -->
 <div class="leadership-role-title">
 CEO’s Message — Mr. Andrew Chong (Aidil Chong)
 </div>
+
 <div class="leader-paragraph">
 We take pride in being one of Malaysia’s trusted providers of specialized manpower
 and outsourcing services. Our reputation is built on discipline, on-site
@@ -487,6 +549,7 @@ and regulatory compliance.
 </div>
 
 <div class="leader-subheading">CEO’s Background</div>
+
 <ul class="leader-list">
 <li>Higher Diploma in Accounting (1990), London Chamber of Commerce and Industry (LCCI)</li>
 <li>Human Resources &amp; Manpower Consultant (30 years)</li>
@@ -497,11 +560,13 @@ and regulatory compliance.
 <li>Logistics, Timber &amp; Trading Management (20 years)</li>
 </ul>
 
+<!-- Director -->
 <div class="leadership-role-title">
 Director’s Profile — Mrs. Melawati (Shella Chong)
 </div>
 
 <div class="leader-subheading">Educational Background</div>
+
 <ul class="leader-list">
 <li>2014 – Sekolah Tinggi Ilmu Ekonomi (STIE–ISM), Bachelor Degree of Management — GPA: 3.27</li>
 <li>Sekolah Tinggi Management IMMI — Transcript GPA: 3.50</li>
@@ -512,6 +577,7 @@ Director’s Profile — Mrs. Melawati (Shella Chong)
 </ul>
 
 <div class="leader-subheading">Professional Experience</div>
+
 <ul class="leader-list">
 <li>
 2017–2025 | Director, Medakom Sdn. Bhd.<br />
@@ -535,6 +601,7 @@ Purchasing, Sales Support (2008–2015).
 </ul>
 
 <div class="leader-subheading">Leadership Philosophy</div>
+
 <div class="leader-paragraph">
 Mrs. Melawati (Shella Chong) focuses on organizational integrity,
 team development, and sustainable growth. She supports strategic workforce
@@ -544,21 +611,28 @@ Medakom Group.
 </div>
 </section>
 
+<!-- ============================= -->
 <!-- VISION & MISSION -->
+<!-- ============================= -->
 <section id="vision">
 <div class="block-card">
 <div class="section-title">Vision &amp; Mission</div>
+
 <div class="text-block">
 <p><b>Vision:</b> To be a trusted HR and manpower management partner delivering integrated and sustainable workforce solutions across industries.</p>
+
 <p><b>Mission:</b> To provide ethical, efficient, and sustainable solutions that empower people and businesses to grow together.</p>
 </div>
 </div>
 </section>
 
+<!-- ============================= -->
 <!-- SERVICES -->
+<!-- ============================= -->
 <section id="services">
 <div class="block-card">
 <div class="section-title">Our Services</div>
+
 <div class="bullet-block">
 <p>• Manpower Supply &amp; HR Contracting</p>
 <p>• Outsourcing &amp; Logistics Management</p>
@@ -569,10 +643,13 @@ Medakom Group.
 </div>
 </section>
 
-<!-- GALLERY -->
+<!-- ============================= -->
+<!-- GALLERY (20 IMAGES + LIGHTBOX)-->
+<!-- ============================= -->
 <section id="gallery">
 <div class="block-card">
 <div class="section-title">Company Gallery</div>
+
 <div class="text-block" style="text-align:center;">
 Field operations, workforce deployment, logistics support,
 plantation and reforestation activity.
@@ -580,6 +657,7 @@ Tap / click any image to view.
 </div>
 
 <div class="gallery-grid">
+<!-- 1 - 20 thumbnails -->
 <a href="#" onclick="openLightbox('images_Page_01.jpg');return false;">
 <img src="images_Page_01.jpg" alt="Medakom photo 1" class="gallery-thumb" />
 </a>
@@ -610,7 +688,6 @@ Tap / click any image to view.
 <a href="#" onclick="openLightbox('images_Page_10.jpg');return false;">
 <img src="images_Page_10.jpg" alt="Medakom photo 10" class="gallery-thumb" />
 </a>
-
 <a href="#" onclick="openLightbox('images_Page_11.jpg');return false;">
 <img src="images_Page_11.jpg" alt="Medakom photo 11" class="gallery-thumb" />
 </a>
@@ -653,7 +730,9 @@ Tap / click any image to view.
 </div>
 </div>
 
+<!-- ============================= -->
 <!-- CONTACT -->
+<!-- ============================= -->
 <section id="contact">
 <div class="block-card">
 <div class="section-title">Contact Us</div>
@@ -678,7 +757,9 @@ Danum Sinar Land, Lakin / Klayan Estate,
 
 <div class="contact-line">
 <strong>Email:</strong>
-<a class="email-link" href="mailto:medakomhq@gmail.com">medakomhq@gmail.com</a>
+<a class="email-link" href="mailto:medakomhq@gmail.com">
+medakomhq@gmail.com
+</a>
 </div>
 
 <div class="contact-line">
@@ -688,13 +769,17 @@ Danum Sinar Land, Lakin / Klayan Estate,
 </div>
 </section>
 
+<!-- ============================= -->
 <!-- FOOTER -->
+<!-- ============================= -->
 <footer>
 <div>© 2025 MEDAKOM SDN. BHD. — All Rights Reserved</div>
 <div>Designed by Shella Chong</div>
 </footer>
 
-<!-- LIGHTBOX SCRIPT -->
+<!-- ============================= -->
+<!-- LIGHTBOX SCRIPT (GALLERY POP) -->
+<!-- ============================= -->
 <script>
 function openLightbox(imgSrc) {
 var overlay = document.getElementById('lightboxOverlay');
