@@ -1,796 +1,1251 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+<!-- ================================== -->
+<!-- META / SEO / VERIFICATION SECTION -->
+<!-- ================================== -->
+
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="google-site-verification" content="DbCs_jtEPjklYIRVRm0AM297dvhWUh5unOYJJm911mk" />
-<meta name="description" content="Medakom Sdn. Bhd. — Trusted Malaysian manpower, outsourcing, logistics, timber trading, palm oil, cleaning and reforestation management company delivering sustainable workforce solutions." />
-<meta name="keywords" content="Medakom, manpower supply Malaysia, outsourcing, HR contracting, logistics, timber, palm oil, reforestation, cleaning services, workforce management" />
-<meta name="author" content="Shella Chong" />
-<meta name="robots" content="index, follow" />
-<title>MEDAKOM SDN. BHD. | Official Website</title>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0" />
+
+<!-- Google Search Console Verification -->
+<meta name="google-site-verification"
+content="DbCs_jtEPjklYIRVRm0AM297dvhWUh5unOYJJm911mk" />
+
+<!-- Basic SEO description -->
+<meta name="description"
+content="Medakom Sdn. Bhd. — A trusted Malaysian manpower, outsourcing, logistics, timber trading, and reforestation management company delivering sustainable workforce solutions." />
+
+<!-- Keywords for industry relevance -->
+<meta name="keywords"
+content="Medakom, Medakom Sdn. Bhd., manpower Malaysia, outsourcing, HR contracting, workforce supply, logistics, timber trading, palm oil contractor, reforestation management, cleaning services, plantation workforce, general workers Malaysia" />
+
+<!-- Author / designer credit -->
+<meta name="author"
+content="Shella Chong" />
+
+<!-- Robots: allow indexing -->
+<meta name="robots"
+content="index, follow" />
+
+
+<!-- ================================== -->
+<!-- TITLE -->
+<!-- ================================== -->
+
+<title>
+MEDAKOM SDN. BHD. | Official Website
+</title>
+
+
+
+<!-- ================================== -->
+<!-- GLOBAL STYLE (INLINE CSS) -->
+<!-- Puan: semua style sudah di sini -->
+<!-- Tiada file .css berasingan -->
+<!-- ================================== -->
 
 <style>
-:root {
---sky-light-1: #dff0ff;
---sky-light-2: #eef7ff;
---sky-light-3: #ffffff;
---text-dark: #0f1f3a;
---text-body: #444;
---accent-red: #a90f1f;
---accent-red-hover: #7c0c16;
---card-bg: #ffffff;
---card-border: #dcdcdc;
---shadow-card: 0 10px 24px rgba(0,0,0,0.07);
---overlay-bg: rgba(0,0,0,0.8);
-}
+
+/****************************************************
+* GLOBAL RESET / BASE
+****************************************************/
 
 * {
+margin: 0;
+padding: 0;
 box-sizing: border-box;
--webkit-font-smoothing: antialiased;
+}
+
+:root {
+/* warna biru profesional yang lembut / awan */
+--sky-soft-start: #e9f2ff;
+--sky-soft-end: #f5f9ff;
+
+/* biru korporat gelap untuk teks penting */
+--deep-blue: #003366;
+
+/* biru sederhana (sekunder) */
+--mid-blue: #0055a5;
+
+/* merah korporat (butang) */
+--accent-red: #ff3333;
+--accent-red-hov: #cc0000;
+
+/* putih untuk panel / kad */
+--card-bg: #ffffff;
+
+/* latar belakang blok gallery */
+--gallery-bg: #f0f7ff;
+
+/* bayang lembut */
+--shadow-soft: 0 3px 8px rgba(0,0,0,0.12);
 }
 
 body {
-margin: 0;
-font-family: "Poppins", system-ui, sans-serif;
-background: linear-gradient(to bottom, var(--sky-light-2), var(--sky-light-3) 200px);
-color: var(--text-body);
-line-height: 1.6;
-}
-
-/* ===========================
-HEADER / NAV BAR
-=========================== */
-header {
+font-family: "Poppins", Arial, Helvetica, sans-serif;
+line-height: 1.7;
+color: #222;
 background: linear-gradient(
-to right,
-var(--sky-light-1),
-var(--sky-light-2),
-var(--sky-light-3)
+to bottom,
+var(--sky-soft-start),
+var(--sky-soft-end)
 );
-border-bottom: 2px solid var(--accent-red);
-box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-position: relative;
-z-index: 1000;
+/* elak scroll sideways */
+overflow-x: hidden;
 }
 
-.nav-wrapper {
-max-width: 1200px;
-margin: 0 auto;
-padding: 12px 16px;
+
+
+/****************************************************
+* HEADER / TOP BAR
+* - Latar belakang biru awan lembut (translucent putih)
+* - Logo M besar di kiri (tanpa kotak putih)
+* - MEDAKOM SDN. BHD. di tengah
+* - Menu di kanan
+****************************************************/
+
+header {
+width: 100%;
 display: flex;
 align-items: center;
 justify-content: space-between;
-flex-wrap: wrap;
-row-gap: 12px;
+
+background: rgba(255,255,255,0.9); /* lembut, macam awan */
+backdrop-filter: blur(8px);
+
+padding: 12px 4%;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+position: sticky;
+top: 0;
+z-index: 1000;
 }
 
-/* LEFT: logo BESAR, tegak */
-.brand-left {
+/* LOGO M BESAR KIRI ATAS */
+.brand-block {
 display: flex;
-align-items: center;
-min-width: 120px;
-}
-
-.brand-left img {
-width: 85px; /* besar */
-height: auto;
-object-fit: contain;
-background: transparent;
-border-radius: 0;
-transform: rotate(0deg); /* pastikan tak senget */
-}
-
-/* CENTER: menu */
-nav {
-flex: 1;
-display: flex;
-justify-content: center;
-}
-
-.menu-row {
-display: flex;
-flex-wrap: wrap;
-column-gap: 16px;
-row-gap: 8px;
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-.menu-btn {
-background: none;
-border: none;
-padding: 0;
-cursor: pointer;
-color: var(--text-dark);
-font-size: .9rem;
-font-weight: 600;
-line-height: 1.2;
-display: inline-flex;
-align-items: center;
-gap: 4px;
-}
-
-.menu-btn .arrow {
-font-size: .7rem;
-line-height: 1;
-transition: transform .2s;
-color: var(--text-dark);
-}
-
-.menu-btn.active {
-color: var(--accent-red);
-}
-.menu-btn.active .arrow {
-color: var(--accent-red);
-transform: rotate(180deg);
-}
-
-/* RIGHT: kosong placeholder supaya layout seimbang kiri-kanan */
-.brand-right {
-width: 85px; /* sama luas logo kiri supaya center betul² */
-}
-
-/* ===========================
-HERO SECTION
-=========================== */
-.hero {
-max-width: 1200px;
-margin: 24px auto 24px auto;
-padding: 0 16px;
-text-align: center;
-}
-
-/* COMPANY NAME BESAR DI ATAS EMPOWERING */
-.hero-company {
-font-size: 1.1rem;
-font-weight: 700;
-color: var(--text-dark);
-letter-spacing: 0.08em;
-text-transform: uppercase; /* ALL CAPS */
-margin-bottom: 16px;
-line-height: 1.4;
-}
-
-.hero-headline {
-font-size: clamp(1.4rem, 1vw + 1rem, 2rem);
-font-weight: 600;
-color: var(--text-dark);
-margin-bottom: 8px;
-line-height: 1.3;
-text-align: center;
-}
-
-.hero-tagline {
-color: #2e3b50;
-font-size: .95rem;
-margin-bottom: 20px;
-text-align: center;
-}
-
-.hero-actions {
-display: flex;
-flex-direction: column;
 align-items: center;
 gap: 12px;
-margin-bottom: 24px;
 }
 
-.btn-main {
+.brand-logo {
+width: 110px; /* besar, menonjol */
+height: auto;
+object-fit: contain;
+
+/* puan minta "tanpa kotak putih" & lebih menonjol */
+background-color: transparent;
+border-radius: 0;
+filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* TEXT MEDAKOM SDN. BHD. DI TENGAH HEADER */
+.brand-title-wrapper {
+flex: 1;
+text-align: center;
+}
+
+.brand-title {
+font-size: 1.6rem; /* besar */
+font-weight: 700;
+color: var(--deep-blue);
+letter-spacing: 1.5px;
+line-height: 1.3;
+text-transform: uppercase; /* HURUF CAPITAL */
+}
+
+/* NAV RIGHT SIDE */
+nav {
+min-width: fit-content;
+}
+
+nav ul {
+list-style: none;
+display: flex;
+flex-wrap: nowrap;
+align-items: center;
+gap: 18px;
+}
+
+nav ul li {
+position: relative;
+}
+
+nav ul li a {
+text-decoration: none;
+color: var(--deep-blue);
+font-size: 0.9rem;
+font-weight: 500;
+padding: 4px 6px;
+display: inline-flex;
+align-items: center;
+line-height: 1.3;
+transition: color 0.25s;
+}
+
+nav ul li a:hover {
+color: var(--accent-red);
+}
+
+/* Tanda ▼ di setiap menu seperti puan minta */
+nav ul li a .arrow {
+font-size: 0.6rem;
+margin-left: 4px;
+color: var(--deep-blue);
+}
+
+
+
+/****************************************************
+* HERO SECTION (BAHAGIAN UTAMA ATAS)
+* - MEDAKOM SDN. BHD. besar tengah
+* - Slogan
+* - Subteks
+* - Butang merah Contact Us
+****************************************************/
+
+.hero {
+width: 100%;
+text-align: center;
+
+/* rasa langit / awan lembut */
+background: linear-gradient(
+to bottom,
+#d9ebff 0%,
+#eaf3ff 40%,
+#ffffff 100%
+);
+
+color: var(--deep-blue);
+padding: 100px 20px 80px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+/* kemas naik perlahan */
+animation: fadeInHero 1.5s ease both;
+}
+
+@keyframes fadeInHero {
+0% { opacity:0; transform: translateY(20px); }
+100% { opacity:1; transform: translateY(0); }
+}
+
+.hero .company-name-display {
+font-size: 2rem;
+font-weight: 700;
+color: var(--deep-blue);
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+.hero .slogan-main {
+font-size: 1.4rem;
+font-weight: 600;
+color: var(--mid-blue);
+margin-bottom: 8px;
+}
+
+.hero .slogan-sub {
+font-size: 1rem;
+color: #333;
+margin-bottom: 25px;
+}
+
+.hero .contact-btn {
 background-color: var(--accent-red);
 color: #fff;
-border: none;
-border-radius: 4px;
-padding: 10px 20px;
-font-size: .9rem;
-font-weight: 600;
-cursor: pointer;
-transition: .2s;
 text-decoration: none;
+font-weight: 600;
+border-radius: 6px;
+padding: 12px 28px;
+display: inline-block;
+box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+transition: background-color 0.25s;
 }
-.btn-main:hover { background-color: var(--accent-red-hover); }
 
-/* ===========================
-CONTENT PANELS
-=========================== */
-main {
+.hero .contact-btn:hover {
+background-color: var(--accent-red-hov);
+}
+
+
+
+/****************************************************
+* GENERIC CARD SECTIONS
+* - Core Values
+* - Key Strengths
+* - Leadership
+* - etc
+*
+* Semua seksyen selepas hero ini akan gunakan gaya ini.
+****************************************************/
+
+section.info-block {
+width: 90%;
 max-width: 1200px;
-margin: 0 auto 60px auto;
-padding: 0 16px 40px;
+margin: 40px auto;
+background-color: var(--card-bg);
+border-radius: 12px;
+box-shadow: var(--shadow-soft);
+padding: 40px 30px;
+animation: fadeInBlock 1s ease both;
 }
 
-.panel {
-background: var(--card-bg);
-border: 1px solid var(--card-border);
-border-radius: 10px;
-box-shadow: var(--shadow-card);
-padding: 24px 20px 28px;
+/* animasi naik perlahan bila scroll */
+@keyframes fadeInBlock {
+0% { opacity:0; transform: translateY(20px); }
+100% { opacity:1; transform: translateY(0); }
+}
+
+.section-heading {
+text-align: center;
+color: var(--deep-blue);
+font-size: 1.3rem;
+font-weight: 600;
+letter-spacing: .5px;
+margin-bottom: 25px;
+text-transform: uppercase;
+}
+
+.section-sub-block {
+max-width: 1000px;
+margin: 0 auto 30px auto;
+color: #222;
+font-size: 0.95rem;
+line-height: 1.7;
+}
+
+.section-sub-block p {
+margin-bottom: 15px;
+}
+
+.section-list {
+max-width: 1000px;
+margin: 0 auto;
+color: #222;
+font-size: 0.95rem;
+line-height: 1.7;
+}
+
+.section-list ul {
+padding-left: 20px;
 margin-bottom: 20px;
-display: none;
-animation: fadein .3s ease;
-}
-.panel.active {
-display: block;
 }
 
-@keyframes fadein {
-from {opacity:0;transform:translateY(10px);}
-to {opacity:1;transform:translateY(0);}
+.section-list li {
+margin-bottom: 10px;
 }
 
-.section-title {
+
+
+/****************************************************
+* LEADERSHIP SECTION SPECIFIC
+****************************************************/
+
+.leader-block {
+border-top: 1px solid #d9e3f7;
+padding-top: 25px;
+margin-top: 25px;
+}
+
+.leader-title {
 font-size: 1rem;
 font-weight: 600;
-color: var(--accent-red);
-text-transform: uppercase;
-letter-spacing: 0.05em;
-margin-bottom: 16px;
-line-height: 1.3;
-text-align: left;
+color: var(--mid-blue);
+margin-bottom: 15px;
 }
 
-.subhead {
-font-weight: 600;
-color: var(--text-dark);
-margin-top: 20px;
-margin-bottom: 8px;
-font-size: .9rem;
-line-height: 1.4;
-border-left: 3px solid var(--accent-red);
-padding-left: 8px;
-}
-
-p {
-color: var(--text-body);
-font-size: .9rem;
-margin: 6px 0 12px;
+.leader-subtitle {
+font-size: 0.95rem;
+color: #111;
 line-height: 1.6;
+margin-bottom: 15px;
 }
 
-ul {
-color: var(--text-body);
-font-size: .9rem;
-margin: 6px 0 16px;
-line-height: 1.6;
-padding-left: 18px;
-}
-
-li { margin-bottom: 6px; }
-
-ol {
-color: var(--text-body);
-font-size: .9rem;
-margin: 6px 0 16px;
-line-height: 1.6;
+.leader-ul {
 padding-left: 20px;
+margin-bottom: 20px;
+font-size: 0.95rem;
+color: #222;
+line-height: 1.7;
 }
 
-/* ===========================
-GALLERY (click to zoom)
-=========================== */
+.leader-ul li {
+margin-bottom: 8px;
+}
+
+.philosophy-block {
+background-color: #f7faff;
+border-left: 4px solid var(--mid-blue);
+border-radius: 6px;
+padding: 15px 20px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+font-size: 0.95rem;
+line-height: 1.7;
+color: #222;
+}
+
+.philosophy-block p {
+margin-bottom: 12px;
+}
+
+
+
+/****************************************************
+* GALLERY SECTION
+* - Gambar syarikat (public view)
+* - Klik gambar = buka besar (lightbox)
+****************************************************/
+
+#gallery-block {
+background-color: var(--gallery-bg);
+}
+
 .gallery-grid {
 display: flex;
 flex-wrap: wrap;
-gap: 10px;
 justify-content: center;
-margin-top: 16px;
+gap: 15px;
+margin-top: 10px;
 }
 
-.gallery-grid img {
-width: 140px;
-height: auto;
-border-radius: 6px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-background-color: #fff;
-object-fit: cover;
-cursor: pointer;
-transition: .15s;
+.gallery-grid a {
+display: inline-block;
+text-decoration: none;
+outline: none;
+border: none;
 }
-.gallery-grid img:hover {
-box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+.gallery-thumb {
+width: 220px;
+height: 150px;
+object-fit: cover;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+cursor: pointer;
+transition: transform 0.2s;
+background-color: #fff;
+}
+
+.gallery-thumb:hover {
+transform: scale(1.05);
 }
 
 /* LIGHTBOX OVERLAY */
 .lightbox-overlay {
 position: fixed;
-inset: 0;
-background: var(--overlay-bg);
-display: none;
+z-index: 2000;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+
+background: rgba(0,0,0,0.8);
+
+display: none; /* default: hidden */
 align-items: center;
 justify-content: center;
-z-index: 9999;
 padding: 20px;
 }
 
 .lightbox-overlay.active {
-display: flex;
+display: flex; /* show when active */
 }
 
 .lightbox-inner {
+max-width: 90%;
+max-height: 85%;
 position: relative;
-max-width: 90vw;
-max-height: 90vh;
-background: #000;
-border-radius: 8px;
-box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-overflow: hidden;
 }
 
-.lightbox-img {
-max-width: 100%;
-max-height: 90vh;
-display: block;
-object-fit: contain;
+.lightbox-inner img {
+width: 100%;
+height: auto;
+max-height: 85vh;
+border-radius: 10px;
+box-shadow: 0 0 20px rgba(255,255,255,0.2);
+background-color: #fff;
 }
 
 .lightbox-close {
 position: absolute;
-top: 8px;
-right: 12px;
-background: rgba(0,0,0,0.6);
-color: #fff;
-border: 0;
-border-radius: 4px;
-padding: 6px 10px;
-font-size: .8rem;
+top: -10px;
+right: -10px;
+background: #fff;
+color: #000;
+border-radius: 50%;
+width: 28px;
+height: 28px;
+font-size: 14px;
+font-weight: bold;
+border: 2px solid #000;
+display: flex;
+align-items: center;
+justify-content: center;
 cursor: pointer;
+box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
-/* ===========================
-CONTACT BLOCK
-=========================== */
-.contact-block p {
+
+
+/****************************************************
+* CONTACT / FOOTER
+****************************************************/
+
+#contact-block .contact-line {
+font-size: 0.95rem;
 margin-bottom: 10px;
-font-size: .9rem;
-line-height: 1.5;
-}
-.contact-block b {
-color: var(--text-dark);
+line-height: 1.6;
+color: #222;
+text-align: center;
 }
 
-.email-link {
-color: var(--accent-red);
-font-weight: 600;
+#contact-block a.email-link {
+color: var(--mid-blue);
 text-decoration: none;
-}
-.email-link:hover {
-color: var(--accent-red-hover);
-text-decoration: underline;
+font-weight: 600;
 }
 
-/* ===========================
-FOOTER
-=========================== */
-footer {
-background-color: var(--text-dark);
+#contact-block a.email-link:hover {
+color: var(--accent-red);
+}
+
+footer.site-footer {
+background-color: var(--deep-blue);
 color: #fff;
 text-align: center;
-padding: 24px 10px 32px;
-font-size: .8rem;
-line-height: 1.5;
-}
-footer .credit {
-opacity: 0.8;
+padding: 30px 10px;
+font-size: 0.8rem;
+line-height: 1.6;
+margin-top: 50px;
+letter-spacing: 0.4px;
 }
 
-/* ===========================
-RESPONSIVE
-=========================== */
-@media(max-width:900px){
-.nav-wrapper {
+
+
+/****************************************************
+* RESPONSIVE / MOBILE ADJUSTMENTS
+****************************************************/
+
+@media (max-width: 900px) {
+
+header {
 flex-wrap: wrap;
+text-align: center;
 justify-content: center;
-row-gap: 16px;
 }
 
-.brand-left {
-order: 1;
+.brand-block {
+width: 100%;
 justify-content: center;
+margin-bottom: 8px;
+}
+
+.brand-title-wrapper {
+width: 100%;
+order: 3;
+margin-top: 10px;
 }
 
 nav {
-order: 2;
 width: 100%;
+order: 2;
+margin-top: 10px;
+}
+
+nav ul {
+flex-wrap: wrap;
 justify-content: center;
+gap: 12px 18px;
 }
 
-.brand-right {
-display: none;
+.brand-title {
+font-size: 1.3rem;
 }
 
-.menu-row {
-justify-content: center;
+.hero {
+padding-top: 80px;
+padding-bottom: 60px;
 }
 
-.hero-company {
-font-size: 1rem;
+.hero .company-name-display {
+font-size: 1.5rem;
 }
 
-.hero-headline {
-font-size: 1.4rem;
+.hero .slogan-main {
+font-size: 1.2rem;
+}
+
+.hero .slogan-sub {
+font-size: 0.95rem;
+}
+
+section.info-block {
+width: 92%;
+padding: 30px 20px;
+}
+
+.section-heading {
+font-size: 1.1rem;
+}
+
+.section-sub-block,
+.section-list {
+font-size: 0.9rem;
+}
+
+.leader-title {
+font-size: 0.95rem;
+}
+
+.leader-subtitle {
+font-size: 0.9rem;
+}
+
+.lightbox-close {
+top: -14px;
+right: -14px;
+width: 32px;
+height: 32px;
+font-size: 15px;
 }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<header>
-<div class="nav-wrapper">
+<!-- =================================================== -->
+<!-- HEADER / NAV BAR -->
+<!-- =================================================== -->
+<header id="top-header">
 
-<!-- LEFT: LOGO BESAR TEGAK -->
-<div class="brand-left">
-<img src="IMG_6349.jpeg" alt="Medakom Logo">
+<!-- KIRI: LOGO M BESAR -->
+<div class="brand-block">
+<!-- PENTING:
+Pastikan fail logo puan disimpan sebagai "logo.png"
+dalam repo yang sama dengan index.html -->
+<img src="logo.png"
+alt="Medakom Logo"
+class="brand-logo" />
 </div>
 
-<!-- CENTER: MENU -->
+<!-- TENGAH: MEDAKOM SDN. BHD. BESAR HURUF CAPITAL -->
+<div class="brand-title-wrapper">
+<div class="brand-title">
+MEDAKOM SDN. BHD.
+</div>
+</div>
+
+<!-- KANAN: MENU DENGAN '▼' -->
 <nav>
-<ul class="menu-row">
-
-<li>
-<button class="menu-btn active" data-target="panel-home">
-Home <span class="arrow">▼</span>
-</button>
-</li>
-
-<li>
-<button class="menu-btn" data-target="panel-about">
-About <span class="arrow">▼</span>
-</button>
-</li>
-
-<li>
-<button class="menu-btn" data-target="panel-leadership">
-Leadership <span class="arrow">▼</span>
-</button>
-</li>
-
-<li>
-<button class="menu-btn" data-target="panel-vision">
-Vision &amp; Mission <span class="arrow">▼</span>
-</button>
-</li>
-
-<li>
-<button class="menu-btn" data-target="panel-services">
-Services <span class="arrow">▼</span>
-</button>
-</li>
-
-<li>
-<button class="menu-btn" data-target="panel-gallery">
-Gallery <span class="arrow">▼</span>
-</button>
-</li>
-
-<li>
-<button class="menu-btn" data-target="panel-contact">
-Contact <span class="arrow">▼</span>
-</button>
-</li>
-
+<ul>
+<li><a href="#home">Home<span class="arrow">▼</span></a></li>
+<li><a href="#core-values-block">About<span class="arrow">▼</span></a></li>
+<li><a href="#leadership-block">Leadership<span class="arrow">▼</span></a></li>
+<li><a href="#vision-block">Vision<span class="arrow">▼</span></a></li>
+<li><a href="#services-block">Services<span class="arrow">▼</span></a></li>
+<li><a href="#gallery-block">Gallery<span class="arrow">▼</span></a></li>
+<li><a href="#contact-block">Contact<span class="arrow">▼</span></a></li>
 </ul>
 </nav>
 
-<!-- RIGHT: kosong untuk balance -->
-<div class="brand-right"></div>
-
-</div>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-<div class="hero-company">MEDAKOM SDN. BHD.</div>
 
-<div class="hero-headline">Empowering People, Building Futures</div>
-<div class="hero-tagline">Sustainable Environment for Future Generations</div>
 
-<div class="hero-actions">
-<a class="btn-main" id="openContactBtn">Contact Us</a>
+<!-- =================================================== -->
+<!-- HERO SECTION -->
+<!-- =================================================== -->
+<section id="home"
+class="hero">
+
+<!-- Nama syarikat dipaparkan lagi di tengah hero,
+ikut arahan puan: MEDAKOM SDN. BHD. di atas slogan -->
+<div class="company-name-display">
+MEDAKOM SDN. BHD.
 </div>
+
+<div class="slogan-main">
+Empowering People, Building Futures
+</div>
+
+<div class="slogan-sub">
+Sustainable Environment for Future Generations
+</div>
+
+<a class="contact-btn"
+href="#contact-block">
+Contact Us
+</a>
+
 </section>
 
-<!-- ================= MAIN CONTENT / PANELS ================= -->
-<main>
 
-<!-- HOME PANEL -->
-<section id="panel-home" class="panel active">
-<div class="section-title">Core Values</div>
-<ul>
-<li><b>Integrity &amp; Compliance</b> — We operate with transparency and follow Malaysian labour and industry standards.</li>
-<li><b>Human Responsibility</b> — We believe every worker deserves respect, safety, fair administration, and dignity at work.</li>
-<li><b>Sustainability</b> — We focus on long-term workforce stability, not just short-term placement.</li>
-<li><b>Reliability</b> — We deliver manpower solutions that keep client operations running with control.</li>
-<li><b>Partnership Mindset</b> — We build relationships, not just contracts.</li>
-</ul>
 
-<div class="section-title">Key Strength</div>
-<ul>
-<li>Deep experience in industries with high labour demand: plantation, palm oil, timber, cleaning, factory, construction, logistics.</li>
-<li>We manage both local and foreign workers, including documentation, supervision, discipline, production line and site control.</li>
-<li>Hands-on operating model — not just agency paperwork; we run and supervise people on-site.</li>
-<li>Cost-effective solutions to help clients reduce overhead while keeping output stable and compliant.</li>
-</ul>
+<!-- =================================================== -->
+<!-- CORE VALUES / KEY STRENGTHS (ABOUT COMPANY) -->
+<!-- =================================================== -->
+<section id="core-values-block"
+class="info-block">
 
-<div class="section-title">Nature of Business</div>
-<ul>
-<li>Manpower Supply &amp; HR Contracting</li>
-<li>Outsourcing &amp; Workforce / Site Management</li>
-<li>Industrial Cleaning &amp; G7 Facility Maintenance</li>
-<li>Timber Trading &amp; Softwood Supply</li>
-<li>Quarry &amp; River Sand Logistics / Barge &amp; Shipment Handling</li>
-<li>Palm Oil Contractor / Estate Operations Support</li>
-<li>Manufacturing Line Support, Scrap Handling &amp; Plant Housekeeping</li>
-<li>Reforestation / Forestry Management &amp; Compliance Support</li>
-</ul>
+<div class="section-heading">
+Core Values
+</div>
 
-<div class="section-title">Track Record Recruitment</div>
+<div class="section-sub-block">
+
 <p>
-We have supported multi-year contracts in manpower placement, plantation/estate labour,
-production line support, logistics handling, cleaning, and site compliance. We maintain long-term
-relationships with clients across Sabah, Sarawak, and Semenanjung in timber, palm oil,
-plantation rehabilitation, quarry/sand movement, and infrastructure support. We scale
-reliably through disciplined attendance, supervision and output control.
+<strong>Integrity &amp; Compliance —</strong>
+We operate with transparency and follow Malaysian labour and industry standards.
 </p>
 
-<div class="section-title">Organization Chart</div>
-<p><b>Executive Direction:</b></p>
-<ul>
-<li><b>Chief Executive Officer (CEO):</b> Mr. Andrew Chong (Aidil Chong)</li>
-<li><b>Director:</b> Mrs. Melawati (Shella Chong)</li>
-</ul>
-<p><b>Core Functional Units:</b></p>
-<ul>
-<li>Human Resource &amp; Manpower Deployment</li>
-<li>Operations &amp; Site Supervision</li>
-<li>Logistics / Fleet / Barge Coordination</li>
-<li>Finance &amp; Compliance Administration</li>
-<li>Client Liaison &amp; Account Management</li>
-<li>Safety &amp; Field Discipline / Site Control</li>
-</ul>
+<p>
+<strong>Human Responsibility —</strong>
+We believe every worker deserves respect, safety, fair administration,
+and dignity at work.
+</p>
+
+<p>
+<strong>Sustainability —</strong>
+We focus on long-term workforce stability, not just short-term placement.
+</p>
+
+<p>
+<strong>Reliability —</strong>
+We deliver manpower solutions that keep client operations running without disruption.
+</p>
+
+<p>
+<strong>Partnership Mindset —</strong>
+We build relationships, not just contracts.
+</p>
+
+</div>
+
+
+<div class="section-heading"
+style="margin-top:40px;">
+Key Strengths
+</div>
+
+<div class="section-sub-block">
+
+<p>
+Deep experience in industries with high labour demand:
+plantation, palm oil, timber, cleaning, factory, construction,
+and logistics.
+</p>
+
+<p>
+We manage both local and foreign workers, including documentation,
+supervision, discipline, and payroll compliance.
+</p>
+
+<p>
+Hands-on operating model — not just agency paperwork, we run and supervise
+people on-site.
+</p>
+
+<p>
+Cost-effective solutions to help clients reduce overhead while
+keeping full compliance.
+</p>
+
+</div>
+
 </section>
 
-<!-- ABOUT PANEL -->
-<section id="panel-about" class="panel">
-<div class="section-title">About Us</div>
-<p>
-Medakom Sdn. Bhd. is a Malaysian manpower supplier and outsourcing company
-providing integrated workforce solutions across manufacturing, logistics,
-timber trading, construction, palm oil, cleaning and forestry / reforestation
-management sectors.
-</p>
-<p>
-We focus on compliance, structured deployment, operational discipline, and human
-capital sustainability. Our role is to help clients run operations while we manage
-the workforce ethically and professionally.
-</p>
-</section>
 
-<!-- LEADERSHIP PANEL -->
-<section id="panel-leadership" class="panel">
-<div class="section-title">Leadership</div>
 
-<div class="subhead">CEO’s Message — Mr. Andrew Chong (Aidil Chong)</div>
-<p>
-We take pride in being one of Malaysia’s trusted providers of specialized manpower
-and outsourcing services. We are committed to supporting industries that depend
-heavily on foreign and local workers by providing ethical, reliable, and
-cost-effective workforce solutions.
-</p>
-<p>
-Our reputation is built on discipline, on-site supervision, and responsibility.
-We operate with a human-oriented approach — taking care of clients’ production
-needs while ensuring workforce welfare and regulatory compliance.
-</p>
-<p>
-Supported by Era Holistic Ventures Sdn. Bhd. and Active Forest Solutions Sdn. Bhd.,
-our group continues to invest in long-term sustainability, reforestation support,
-and responsible labour deployment.
-</p>
+<!-- =================================================== -->
+<!-- LEADERSHIP SECTION -->
+<!-- =================================================== -->
+<section id="leadership-block"
+class="info-block">
 
-<div class="subhead">CEO’s Background</div>
-<ul>
-<li>Higher Diploma in Accounting (1990), London Chamber of Commerce and Industry (LCCI)</li>
-<li>30+ years: Human Resources &amp; Manpower Consulting</li>
-<li>30 years: Manufacturing / Construction / Scrap / Factory Process Management</li>
-<li>20 years: Logistics, Trading &amp; Shipment / Barge Agency</li>
-<li>18 years: G7 Cleaning &amp; Facility Services Management</li>
-<li>10 years: Palm Oil Management, Plantation &amp; Field Operations</li>
-<li>Active in Timber / Softwood Trading, Quarry &amp; River Sand Trading, Reforestation Support</li>
+<div class="section-heading">
+Leadership
+</div>
+
+<!-- CEO Block -->
+<div class="leader-block">
+
+<div class="leader-title">
+CEO’s Message — Mr. Andrew Chong (Aidil Chong)
+</div>
+
+<div class="leader-subtitle">
+In Medakom, we take pride in being one of Malaysia’s trusted providers of specialized
+manpower and outsourcing services. We are committed to supporting industries that
+depend heavily on both foreign and local workers by providing ethical, reliable,
+and cost-effective workforce solutions.
+</div>
+
+<div class="leader-subtitle">
+Our company has built a strong reputation for professionalism and reliability,
+backed by a talented team of HR experts, service consultants, and field specialists.
+We operate with a human-oriented approach — placing our clients’ needs at the heart of
+everything we do while continuously striving for mutually beneficial outcomes.
+</div>
+
+<div class="leader-subtitle">
+As we continue to grow, we are supported by our group companies —
+Era Holistic Ventures Sdn. Bhd. and Active Forest Solutions Sdn. Bhd. —
+delivering excellence in HR and reforestation management. Together,
+we aim to create long-term value for clients and contribute to sustainable
+development across Malaysia.
+</div>
+
+<div class="leader-title"
+style="margin-top:25px;">
+CEO’s Background
+</div>
+
+<ul class="leader-ul">
+<li>
+Higher Diploma in Accounting (1990), London Chamber of Commerce and Industry (LCCI)
+</li>
+<li>
+Human Resources &amp; Manpower Consultant (30 years)
+</li>
+<li>
+Manufacturing / Construction / Scrap Management (30 years)
+</li>
+<li>
+Palm Oil Management (10 years)
+</li>
+<li>
+G7 Cleaning &amp; Services Management (18 years)
+</li>
+<li>
+Shipment &amp; Barge Agency
+</li>
+<li>
+Logistics, Timber &amp; Trading Management (20 years)
+</li>
 </ul>
 
-<div class="subhead">Director’s Profile — Mrs. Melawati (Shella Chong)</div>
-<p><b>Educational Background</b></p>
-<ul>
-<li>Bachelor of Management (2014) — Sekolah Tinggi Ilmu Ekonomi (STIE–ISM), GPA 3.27</li>
-<li>Business &amp; Office Administration (2008) — SMK PGRI Rangkasbitung, GPA 3.35</li>
-<li>Certificate of Internship — RSUD Adjidarmo Rangkasbitung (Office Administration), GPA 4.00</li>
-<li>Certificate of Competence — Academic Secretariat &amp; Management (LEPISI)</li>
-<li>Currently Pursuing Master In Business Administration (Human Capital Management), At International University of Malaya–Wales (IUMW), Malaysia</li>
+</div> <!-- /CEO Block -->
+
+
+
+<!-- Director Block -->
+<div class="leader-block">
+
+<div class="leader-title">
+Director’s Profile — Mrs. Melawati (Shella Chong)
+</div>
+
+<div class="leader-subtitle">
+<strong>Educational Background</strong>
+</div>
+
+<ul class="leader-ul">
+
+<li>
+2014 – Sekolah Tinggi Ilmu Ekonomi (STIE–ISM),
+Bachelor Degree of Management — GPA: 3.27
+</li>
+
+<li>
+Sekolah Tinggi Management IMMI — Transcript GPA: 3.50
+</li>
+
+<li>
+2008 – SMK PGRI Rangkasbitung,
+Business and Management – Office Administration — GPA: 3.35
+</li>
+
+<li>
+2007 – RSUD Adjidarmo Rangkasbitung,
+Certificate of Internship (Office Administration) — GPA: 4.00
+</li>
+
+<li>
+2008 – Academic Secretariat and Management LEPISI,
+Certificate of Competence – Office Administration
+</li>
+
+<li>
+Currently pursuing
+Master in Business Administration (Human Capital Management)
+at International University of Malaya-Wales (IUMW), Malaysia
+</li>
+
 </ul>
 
-<p><b>Professional Experience</b></p>
-<ul>
-<li>2017–2025 — Director, Medakom Sdn. Bhd. (Malaysia) — Manpower supply, outsourcing, timber trading, manufacturing process, logistics for quarry &amp; palm oil, forestry/reforestation contracting.</li>
-<li>2021–2025 — Director, SS Beauty Legacy Sdn. Bhd. (Malaysia) — Design services, wholesale &amp; retail operations, product distribution.</li>
-<li>2022–2025 — Director, Mepacom Sdn. Bhd. (Malaysia) — General cleaning services, traditional wellness and reflexology centre operations.</li>
-<li>2008–2015 — Administrative &amp; Guest Relation / Purchasing / Finance / Hospitality roles in Indonesia (Novotel Tangerang City, Matahari Dept. Store Puri Mall Jakarta Barat, PT. Kresna Reksa Finance Banten, etc.)</li>
+
+<div class="leader-subtitle">
+<strong>Professional Experience</strong>
+</div>
+
+<ul class="leader-ul">
+
+<li>
+2017–2025 | Director, Medakom Sdn. Bhd.
+<br />
+Business Type: Manpower supplier, outsourcing,
+trading timber, manufacturing process,
+shipping logistics for quarry &amp; palm oil,
+and forestry / reforestation management contracting.
+</li>
+
+<li>
+2021–2025 | Director, SS Beauty Legacy Sdn. Bhd.
+<br />
+Business Type: Design services, wholesale and retail
+trading of diverse products.
+</li>
+
+<li>
+2022–2025 | Director, Mepacom Sdn. Bhd.
+<br />
+Business Type: General cleaning services, traditional wellness,
+and reflexology centre management.
+</li>
+
+<li>
+Early Career (Indonesia)
+<br />
+2015 – Staff Reception &amp; Assistant Sales Representative,
+Illigals Hotel, Jakarta Barat
+<br />
+2014 – Guest Relation Officer &amp; Finance Administration,
+PT. Sinar Surya Purnama, Cikarang
+<br />
+2013 – Guest Relation &amp; Finance Administration,
+Novotel Tangerang City
+<br />
+2011 – Marketing Procurement &amp; Purchasing,
+CV. Toko Bangunan Jaya, Cikarang
+<br />
+2010 – Accounting &amp; Finance Staff,
+PT. Kresna Reksa Finance, Banten
+<br />
+2009 – Purchasing &amp; Sales Assistant,
+Matahari Department Store (Puri Mall), Jakarta Barat
+<br />
+2008 – Guest Relation Staff,
+PT. Citra Vista Mandiri, Cikarang
+</li>
+
 </ul>
 
-<p><b>Leadership Philosophy</b></p>
+
+<div class="leader-subtitle">
+<strong>Leadership Philosophy</strong>
+</div>
+
+<div class="philosophy-block">
 <p>
-Shella Chong focuses on operational discipline, regulatory compliance, workforce dignity,
-and sustainable scaling. She drives alignment between manpower delivery, client expectations,
-and Malaysian compliance standards. Her leadership is centered on integrity, accountability,
-and respect for workers while meeting business performance targets.
+Mrs. Melawati (Shella Chong) embodies dedication, discipline,
+and continuous growth. With her strong background in management,
+administration, and operations, she contributes to strategic
+business planning and human capital development within Medakom Group.
 </p>
+
+<p>
+Her leadership focuses on organizational integrity,
+team empowerment, and sustainable growth — aligning Medakom’s
+business practices with Malaysia’s industry standards and
+ethical compliance.
+</p>
+</div>
+
+</div> <!-- /Director Block -->
+
 </section>
 
-<!-- VISION PANEL -->
-<section id="panel-vision" class="panel">
-<div class="section-title">Vision &amp; Mission</div>
-<p><b>Vision:</b> To be a trusted HR and manpower management partner delivering integrated, ethical, and sustainable workforce solutions across Malaysia’s key industries.</p>
-<p><b>Mission:</b> To provide dependable labour solutions, structured deployment, compliance-based management, and long-term partnership value — empowering both people and businesses to grow together.</p>
+
+
+<!-- =================================================== -->
+<!-- VISION & MISSION -->
+<!-- =================================================== -->
+<section id="vision-block"
+class="info-block">
+
+<div class="section-heading">
+Vision &amp; Mission
+</div>
+
+<div class="section-sub-block">
+
+<p>
+<strong>Vision:</strong>
+To be a trusted HR and manpower management partner delivering
+integrated and sustainable workforce solutions across industries.
+</p>
+
+<p>
+<strong>Mission:</strong>
+To provide ethical, efficient, and sustainable solutions that
+empower people and businesses to grow together.
+</p>
+
+</div>
+
 </section>
 
-<!-- SERVICES PANEL -->
-<section id="panel-services" class="panel">
-<div class="section-title">Our Services</div>
+
+
+<!-- =================================================== -->
+<!-- SERVICES / WHAT WE DO -->
+<!-- =================================================== -->
+<section id="services-block"
+class="info-block">
+
+<div class="section-heading">
+Our Services
+</div>
+
+<div class="section-list">
+
 <ul>
-<li>Manpower Supply &amp; HR Contracting</li>
-<li>Outsourcing &amp; Logistics Management</li>
-<li>Timber Trading &amp; Construction (G7)</li>
-<li>Palm Oil &amp; Forestry / Reforestation Management</li>
-<li>Cleaning &amp; Manufacturing Workforce Support</li>
+<li>
+Manpower Supply &amp; HR Contracting
+</li>
+
+<li>
+Outsourcing &amp; Logistics Management
+</li>
+
+<li>
+Timber Trading &amp; Construction (G7)
+</li>
+
+<li>
+Palm Oil &amp; Forestry / Reforestation Management
+</li>
+
+<li>
+Cleaning &amp; Manufacturing Workforce Support
+</li>
 </ul>
+
+</div>
+
 </section>
 
-<!-- GALLERY PANEL -->
-<section id="panel-gallery" class="panel">
-<div class="section-title">Company Gallery</div>
-<p>Field operations, workforce deployment, logistics support, plantation and reforestation activity.</p>
+
+
+<!-- =================================================== -->
+<!-- GALLERY / COMPANY IMAGES -->
+<!-- =================================================== -->
+<section id="gallery-block"
+class="info-block">
+
+<div class="section-heading">
+Our Company Gallery
+</div>
+
+<div class="section-sub-block"
+style="text-align:center;">
+Below are selected operational and activity photos.
+Click any image to view larger.
+</div>
 
 <div class="gallery-grid">
-<img src="images_Page_01.jpg" alt="Medakom photo 1" />
-<img src="images_Page_02.jpg" alt="Medakom photo 2" />
-<img src="images_Page_03.jpg" alt="Medakom photo 3" />
-<img src="images_Page_04.jpg" alt="Medakom photo 4" />
-<img src="images_Page_05.jpg" alt="Medakom photo 5" />
-<img src="images_Page_06.jpg" alt="Medakom photo 6" />
-<img src="images_Page_07.jpg" alt="Medakom photo 7" />
-<img src="images_Page_08.jpg" alt="Medakom photo 8" />
-<img src="images_Page_09.jpg" alt="Medakom photo 9" />
-<img src="images_Page_10.jpg" alt="Medakom photo 10" />
-<img src="images_Page_11.jpg" alt="Medakom photo 11" />
-<img src="images_Page_12.jpg" alt="Medakom photo 12" />
-<img src="images_Page_13.jpg" alt="Medakom photo 13" />
-<img src="images_Page_14.jpg" alt="Medakom photo 14" />
-<img src="images_Page_15.jpg" alt="Medakom photo 15" />
-<img src="images_Page_16.jpg" alt="Medakom photo 16" />
-<img src="images_Page_17.jpg" alt="Medakom photo 17" />
-<img src="images_Page_18.jpg" alt="Medakom photo 18" />
-<img src="images_Page_19.jpg" alt="Medakom photo 19" />
-<img src="images_Page_20.jpg" alt="Medakom photo 20" />
+<!-- Pastikan semua fail ini wujud dalam repo sama:
+images_Page_01.jpg hingga images_Page_10.jpg
+(puan boleh tambah sampai 20 nanti, sama format) -->
+
+<a href="#"
+onclick="openLightbox('images_Page_01.jpg'); return false;">
+<img src="images_Page_01.jpg"
+alt="Medakom photo 1"
+class="gallery-thumb" />
+</a>
+
+<a href="#"
+onclick="openLightbox('images_Page_02.jpg'); return false;">
+<img src="images_Page_02.jpg"
+alt="Medakom photo 2"
+class="gallery-thumb" />
+</a>
+
+<a href="#"
+onclick="openLightbox('images_Page_03.jpg'); return false;">
+<img src="images_Page_03.jpg"
+alt="Medakom photo 3"
+class="gallery-thumb" />
+</a>
+
+<a href="#"
+onclick="openLightbox('images_Page_04.jpg'); return false;">
+<img src="images_Page_04.jpg"
+alt="Medakom photo 4"
+class="gallery-thumb" />
+</a>
+
+<a href="#"
+onclick="openLightbox('images_Page_05.jpg'); return false;">
+<img src="images_Page_05.jpg"
+alt="Medakom photo 5"
+class="gallery-thumb" />
+</a>
+
+<a href="#"
+onclick="openLightbox('images_Page_06.jpg'); return false;">
+<img src="images_Page_06.jpg"
+alt="Medakom photo 6"
+class="gallery-thumb" />
+</a>
+
+<a href="#"
+onclick="openLightbox('images_Page_07.jpg'); return false;">
+<img src="images_Page_07.jpg"
+alt="Medakom photo 7"
+class="gallery-thumb" />
+</a>
+
+<a href="#"
+onclick="openLightbox('images_Page_08.jpg'); return false;">
+<img src="images_Page_08.jpg"
+alt="Medakom photo 8"
+class="gallery-thumb" />
+</a>
+
+<a href="#"
+onclick="openLightbox('images_Page_09.jpg'); return false;">
+<img src="images_Page_09.jpg"
+alt="Medakom photo 9"
+class="gallery-thumb" />
+</a>
+
+<a href="#"
+onclick="openLightbox('images_Page_10.jpg'); return false;">
+<img src="images_Page_10.jpg"
+alt="Medakom photo 10"
+class="gallery-thumb" />
+</a>
+
+<!-- Puan boleh sambung:
+<a href="#" onclick="openLightbox('images_Page_11.jpg');return false;">
+<img src="images_Page_11.jpg" alt="Medakom photo 11" class="gallery-thumb" />
+</a>
+... sampai images_Page_20.jpg -->
 </div>
+
 </section>
 
-<!-- CONTACT PANEL -->
-<section id="panel-contact" class="panel">
-<div class="section-title">Contact Us</div>
 
-<div class="contact-block">
-<p><b>Operation Office:</b><br>
-Pt 12393-1 Jalan BBN 1/7D, Putra Indah Putra Nilai,<br>
-71800 Nilai, Negeri Sembilan, Malaysia</p>
 
-<p><b>Head Office (Sabah):</b><br>
-Lot 42, Second Floor, Block E, Lorong Plaza 333-6,<br>
-Plaza 333, 89500 Penampang, Sabah</p>
+<!-- =================================================== -->
+<!-- CONTACT / ADDRESSES / EMAIL -->
+<!-- =================================================== -->
+<section id="contact-block"
+class="info-block">
 
-<p><b>Branch Office (Sarawak):</b><br>
-Danum Sinar Land, Lakin / Klayan Estate,<br>
-96900 Belaga, Kapit, Sarawak</p>
-
-<p><b>Email:</b> <a class="email-link" href="mailto:medakomhq@gmail.com">medakomhq@gmail.com</a><br>
-<b>Phone:</b> 011-2327 7465</p>
+<div class="section-heading">
+Contact Us
 </div>
+
+<div class="section-sub-block"
+style="text-align:center;">
+
+<div class="contact-line">
+<strong>Operation Office:</strong>
+Pt 12393-1, Jalan BBN 1/7D, Putra Indah, Putra Nilai,
+71800 Nilai, Negeri Sembilan, Malaysia
+</div>
+
+<div class="contact-line">
+<strong>Head Office (Sabah):</strong>
+Lot 42, Second Floor, Block E, Lorong Plaza 333-6,
+Plaza 333, 89500 Penampang, Sabah
+</div>
+
+<div class="contact-line">
+<strong>Branch Office (Sarawak):</strong>
+Danum Sinar Land, Lakin / Klayan Estate,
+96900 Belaga, Kapit, Sarawak
+</div>
+
+<div class="contact-line">
+<strong>Email:</strong>
+<a class="email-link"
+href="mailto:medakomhq@gmail.com">
+medakomhq@gmail.com
+</a>
+</div>
+
+<div class="contact-line">
+<strong>Phone:</strong>
+011-2327 7465
+</div>
+
+</div>
+
 </section>
 
-</main>
 
-<!-- LIGHTBOX OVERLAY UNTUK GALLERY -->
-<div class="lightbox-overlay" id="lightbox">
-<div class="lightbox-inner">
-<button class="lightbox-close" id="lightboxClose">Close ✕</button>
-<img class="lightbox-img" id="lightboxImg" src="" alt="Preview">
-</div>
+
+<!-- =================================================== -->
+<!-- FOOTER / LEGAL NOTICE -->
+<!-- =================================================== -->
+<footer class="site-footer">
+
+<div>
+© 2025 Medakom Sdn. Bhd. — All Rights Reserved
 </div>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-<div>© 2025 Medakom Sdn. Bhd. — All Rights Reserved</div>
-<div class="credit">Designed by Shella Chong</div>
+<div>
+Designed by Shella Chong
+</div>
+
 </footer>
 
-<!-- ================= SCRIPT ================= -->
+
+
+<!-- =================================================== -->
+<!-- LIGHTBOX SCRIPT UNTUK GALLERY -->
+<!-- =================================================== -->
+<div id="lightboxOverlay"
+class="lightbox-overlay"
+onclick="closeLightbox()">
+
+<div class="lightbox-inner"
+onclick="event.stopPropagation()">
+
+<div class="lightbox-close"
+onclick="closeLightbox()">
+✕
+</div>
+
+<img id="lightboxImage"
+src=""
+alt="Preview" />
+
+</div>
+
+</div>
+
+
+
 <script>
-const buttons = document.querySelectorAll(".menu-btn");
-const panels = document.querySelectorAll(".panel");
+// Buka lightbox gallery
+function openLightbox(imgSrc) {
+var overlay = document.getElementById('lightboxOverlay');
+var img = document.getElementById('lightboxImage');
 
-// Menu click = show that section
-buttons.forEach(btn => {
-btn.addEventListener("click", () => {
-const targetId = btn.getAttribute("data-target");
-
-panels.forEach(panel => {
-if (panel.id === targetId) {
-panel.classList.add("active");
-} else {
-panel.classList.remove("active");
+img.src = imgSrc;
+overlay.classList.add('active');
 }
-});
 
-buttons.forEach(b => b.classList.remove("active"));
-btn.classList.add("active");
-
-const panelEl = document.getElementById(targetId);
-panelEl.scrollIntoView({ behavior: "smooth", block: "start" });
-});
-});
-
-// Contact Us button goes to Contact section
-const contactBtn = document.getElementById("openContactBtn");
-contactBtn.addEventListener("click", () => {
-panels.forEach(panel => {
-if (panel.id === "panel-contact") {
-panel.classList.add("active");
-} else {
-panel.classList.remove("active");
+// Tutup lightbox gallery
+function closeLightbox() {
+var overlay = document.getElementById('lightboxOverlay');
+overlay.classList.remove('active');
 }
-});
-
-buttons.forEach(b => {
-if (b.getAttribute("data-target") === "panel-contact") {
-b.classList.add("active");
-} else {
-b.classList.remove("active");
-}
-});
-
-document.getElementById("panel-contact").scrollIntoView({
-behavior: "smooth",
-block: "start"
-});
-});
-
-// GALLERY LIGHTBOX
-const galleryImgs = document.querySelectorAll(".gallery-grid img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-const lightboxClose = document.getElementById("lightboxClose");
-
-galleryImgs.forEach(img => {
-img.addEventListener("click", () => {
-lightboxImg.src = img.src;
-lightbox.classList.add("active");
-});
-});
-
-lightboxClose.addEventListener("click", () => {
-lightbox.classList.remove("active");
-lightboxImg.src = "";
-});
-
-lightbox.addEventListener("click", (e) => {
-// click outside image to close
-if (e.target === lightbox) {
-lightbox.classList.remove("active");
-lightboxImg.src = "";
-}
-});
 </script>
+
 
 </body>
 </html>
