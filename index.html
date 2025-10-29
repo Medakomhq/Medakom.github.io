@@ -3,163 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="DbCs_jtEPjklYIRVRm0AM297dvhWUh5unOYJJm911mk" />
 <meta name="description" content="Medakom Sdn. Bhd. — A trusted Malaysian manpower, outsourcing, logistics, timber trading, and reforestation management company delivering sustainable workforce solutions.">
 <meta name="keywords" content="Medakom, manpower, outsourcing, HR Malaysia, logistics, timber trading, palm oil, reforestation, cleaning services, HR contracting">
 <meta name="author" content="Shella Chong">
+<meta name="google-site-verification" content="DBCS_jiteplxJtYIRvRMAw297dVduhSunsoYJ3m911mk">
 <title>Medakom Sdn. Bhd | Official Website</title>
-
 <style>
 body {
-margin:0;
-font-family:"Poppins",sans-serif;
-background-color:#fafafa;
-color:#222;
-overflow-x:hidden;
+margin: 0;
+font-family: "Poppins", sans-serif;
+background: #fafafa;
+color: #222;
+overflow-x: hidden;
+text-align: center;
 }
+
 header {
-background:linear-gradient(90deg,#d62828,#f77f00,#003049);
-display:flex;align-items:center;justify-content:space-between;
-padding:10px 40px;color:#fff;position:fixed;width:100%;top:0;z-index:1000;
+background: linear-gradient(90deg, #002147, #d62828);
+color: white;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 40px;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 10;
+box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
-.logo{width:60px;height:60px;border-radius:50%;animation:spin 6s linear infinite;}
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-header h1{flex:1;text-align:center;font-size:1.8rem;letter-spacing:1px;}
-nav a{color:#fff;text-decoration:none;margin:0 10px;font-weight:500;}
-nav a:hover{text-decoration:underline;}
-.hero{
-height:100vh;background:linear-gradient(to bottom right,#d62828,#f77f00,#003049);
-color:#fff;text-align:center;display:flex;flex-direction:column;
-justify-content:center;align-items:center;padding:0 20px;
+
+header img {
+width: 55px;
+height: 55px;
+border-radius: 50%;
+animation: rotate 10s linear infinite;
 }
-.hero h2{font-size:2.2rem;animation:fadeIn 2s ease-in-out;}
-.hero p{font-size:1.2rem;margin-bottom:20px;}
-.btn{background:#fff;color:#003049;padding:12px 30px;border-radius:6px;text-decoration:none;font-weight:bold;transition:.3s;}
-.btn:hover{background:#f77f00;color:#fff;}
-.toggle-btn{margin-top:30px;cursor:pointer;font-size:2rem;color:#fff;animation:bounce 1.5s infinite;}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
-.content{display:none;padding:80px 10%;background:#fff;animation:fadeIn 1s ease-in;}
-section{margin-bottom:40px;}
-h2{text-align:center;color:#003049;}
-ul{line-height:1.8;}
-.gallery-container{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;}
-.gallery-container img{width:220px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .3s;}
-.gallery-container img:hover{transform:scale(1.05);}
-footer{text-align:center;background:#003049;color:#fff;padding:20px 0;font-size:14px;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){header{flex-direction:column;}nav{margin-top:10px;}.hero h2{font-size:1.8rem;}}
+
+@keyframes rotate {
+0% {transform: rotate(0deg);}
+100% {transform: rotate(360deg);}
+}
+
+nav {
+display: flex;
+gap: 25px;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+font-weight: 500;
+}
+
+nav a:hover {
+text-decoration: underline;
+}
+
+h1 {
+font-size: 1.5rem;
+margin: 0;
+}
+
+.hero {
+margin-top: 120px;
+padding: 80px 20px;
+background: white;
+}
+
+.hero h2 {
+font-size: 2rem;
+color: #002147;
+animation: fadein 2s;
+}
+
+.hero p {
+font-size: 1.1rem;
+color: #444;
+}
+
+.hero button {
+margin-top: 20px;
+background: #c1121f;
+color: white;
+border: none;
+padding: 12px 28px;
+font-size: 1rem;
+border-radius: 5px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.hero button:hover {
+background: #a10d19;
+}
+
+#toggle {
+font-size: 1.5rem;
+margin-top: 30px;
+cursor: pointer;
+color: #002147;
+animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+0%, 100% {transform: translateY(0);}
+50% {transform: translateY(5px);}
+}
+
+.content {
+display: none;
+padding: 40px;
+animation: fadein 1.5s;
+background: white;
+text-align: left;
+max-width: 900px;
+margin: 30px auto;
+border-radius: 10px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+@keyframes fadein {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+h3 {
+color: #002147;
+border-bottom: 2px solid #d62828;
+display: inline-block;
+padding-bottom: 5px;
+}
+
+ul {
+line-height: 1.7;
+}
+
+footer {
+background: #002147;
+color: white;
+padding: 15px;
+font-size: 0.9rem;
+margin-top: 40px;
+}
 </style>
-
-<script>
-function toggleContent(){
-const c=document.getElementById("content");
-c.style.display=(c.style.display==="block")?"none":"block";
-}
-</script>
 </head>
-
 <body>
+
 <header>
-<img src="logo.png" alt="Medakom Logo" class="logo">
-<h1>Medakom Sdn. Bhd.</h1>
+<img src="https://i.imgur.com/FxRjGqu.png" alt="Medakom Logo">
+<h1>Medakom Sdn. Bhd</h1>
 <nav>
-<a href="#home">Home</a><a href="#about">About</a><a href="#leadership">Leadership</a>
-<a href="#vision">Vision</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Leadership</a>
+<a href="#">Vision & Mission</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
 </nav>
 </header>
 
-<section id="home" class="hero">
+<section class="hero">
 <h2>Empowering People, Building Futures</h2>
-<p>Sustainable Environment for Future Generations</p>
-<a href="#contact" class="btn">Contact Us</a>
-<div class="toggle-btn" onclick="toggleContent()">▼ View More</div>
+<p>Sustainable Environment for Future Generation</p>
+<button>Contact Us</button>
+<div id="toggle">▼ View More</div>
 </section>
 
-<div id="content" class="content">
+<section id="info" class="content">
+<h3>CEO’s Message</h3>
+<p>In Medakom, we take pride in being one of Malaysia’s trusted providers of specialized manpower and outsourcing services.
+We are committed to supporting industries that depend heavily on foreign and local workers by providing ethical, reliable, and cost-effective workforce solutions.</p>
+<p>Our company has built a strong reputation for professionalism and reliability, backed by a talented team of HR experts, service consultants, and field specialists.
+Together, we aim to create long-term value for our partners and contribute to Malaysia’s economic growth.</p>
+<p><b>The CEO,</b><br>Mr. Andrew Chong (Aidil Chong)</p>
 
-<section id="about">
-<h2>About Us</h2>
-<p>Medakom Sdn. Bhd. is a Malaysian manpower supplier and outsourcing company offering integrated solutions in manufacturing, construction, logistics, timber trading, palm oil, and forestry management sectors.</p>
-</section>
-
-<section id="leadership">
-<h2>Leadership</h2>
-
-<h3>🟦 CEO’s Message — Mr. Andrew Chong (Aidil Chong)</h3>
-<p>In Medakom, we take pride in being one of Malaysia’s trusted providers of specialized manpower and outsourcing services. We are committed to supporting industries that depend heavily on foreign and local workers by providing ethical, reliable, and cost-effective workforce solutions.</p>
-<p>Our company has built a strong reputation for professionalism and reliability, backed by a talented team of HR experts and field specialists. We operate with a human-oriented approach, placing clients at the heart of everything we do while continuously striving for mutually beneficial outcomes.</p>
-<p>As we continue to grow, we are supported by our group companies — Era Holistic Ventures Sdn. Bhd. and Active Forest Solutions Sdn. Bhd. — delivering excellence in HR and reforestation management.</p>
-
-<h3>🟩 CEO’s Background</h3>
+<h3>CEO’s Background</h3>
 <ul>
-<li>Higher Diploma in Accounting (1990) — London Chamber of Commerce and Industry (LCCI)</li>
-<li>Human Resources & Manpower Consultant (30 Years)</li>
-<li>Manufacturing / Construction / Scrap Management (30 Years)</li>
-<li>Palm Oil Management (10 Years)</li>
-<li>G7 Cleaning & Services Management (18 Years)</li>
-<li>Shipment & Barge Agency</li>
-<li>Logistics & Trading Management (20 Years)</li>
-<li>Quarry & River Sand Trader • Timber Softwood Trader</li>
+<li>Higher Diploma in Accounting (LCCI, 1990)</li>
+<li>30 years: HR & Manpower Consulting</li>
+<li>20 years: Logistics, Trading, Shipment Management</li>
+<li>18 years: G7 Cleaning & Services Management</li>
+<li>10 years: Palm Oil Management</li>
 </ul>
 
-<h3>🟧 Director’s Profile — Mrs. Melawati (Shella Chong)</h3>
-<p><strong>Educational Background</strong></p>
+<h3>Director’s Profile — Mrs. Melawati (Shella Chong)</h3>
 <ul>
-<li>2014 – Sekolah Tinggi Ilmu Ekonomi (STIE–ISM), Bachelor of Management — GPA 3.27</li>
-<li>2008 – SMK PGRI Rangkasbitung, Business & Office Administration — GPA 3.35</li>
-<li>2007 – RSUD Adjidarmo Rangkasbitung, Internship — GPA 4.00</li>
-<li>2008 – LEPISI, Certificate of Competence in Secretariat & Management</li>
-<li>Currently pursuing MBA (Human Capital Management), International University of Malaya–Wales (IUMW)</li>
+<li><b>Education:</b> STIE–ISM (Bachelor of Management, GPA 3.27), IMMI (GPA 3.50)</li>
+<li>Currently pursuing MBA (Human Capital Management) — IUMW Malaysia</li>
+<li><b>Experience:</b> Director of Medakom, SS Beauty Legacy & Mepacom Sdn. Bhd.</li>
+<li>Past roles include Finance, Marketing, Procurement, Guest Relations, and HR Administration in Jakarta and Malaysia.</li>
 </ul>
 
-<p><strong>Professional Experience</strong></p>
-<ul>
-<li>2017–2025 | Director, Medakom Sdn. Bhd.</li>
-<li>2021–2025 | Director, SS Beauty Legacy Sdn. Bhd.</li>
-<li>2022–2025 | Director, Mepacom Sdn. Bhd.</li>
-<li>2008–2015 | Administrative & Guest Relation Experience (Indonesia)</li>
-</ul>
-
-<p><strong>Leadership Philosophy</strong></p>
-<p>Mrs. Melawati (Shella Chong) embodies dedication, discipline, and continuous growth. With her strong background in management, administration, and operations, she contributes to strategic business planning and human capital development within Medakom Group.</p>
-<p>Her leadership focuses on organizational integrity, team empowerment, and sustainable growth — aligning Medakom’s business practices with Malaysia’s industry standards and ethical compliance.</p>
+<h3>Leadership Philosophy</h3>
+<p>Mrs. Melawati (Shella Chong) embodies dedication, discipline, and continuous growth.
+Her leadership focuses on organizational integrity, team empowerment, and sustainable development aligned with Malaysia’s business standards.</p>
 </section>
 
-<section id="vision">
-<h2>Vision & Mission</h2>
-<p><strong>Vision:</strong> To be a trusted HR and manpower management partner delivering integrated and sustainable workforce solutions across industries.</p>
-<p><strong>Mission:</strong> To provide ethical, efficient, and sustainable solutions that empower people and businesses to grow together.</p>
-</section>
+<footer>
+© 2025 Medakom Sdn. Bhd. | Designed by Shella Chong
+</footer>
 
-<section id="services">
-<h2>Our Services</h2>
-<ul>
-<li>Manpower Supply & HR Contracting</li>
-<li>Outsourcing & Logistics Management</li>
-<li>Timber Trading & Construction (G7)</li>
-<li>Palm Oil & Forestry / Reforestation Management</li>
-<li>Cleaning & Manufacturing Workforce Support</li>
-</ul>
-</section>
+<script>
+const toggle = document.getElementById('toggle');
+const info = document.getElementById('info');
+let visible = false;
 
-<section id="gallery">
-<h2>Our Gallery</h2>
-<div class="gallery-container">
-<img src="images_Page_01.jpg" alt="photo1"><img src="images_Page_02.jpg" alt="photo2"><img src="images_Page_03.jpg" alt="photo3">
-<img src="images_Page_04.jpg" alt="photo4"><img src="images_Page_05.jpg" alt="photo5">
-</div>
-</section>
-
-<section id="contact">
-<h2>Contact Us</h2>
-<p><strong>Operation Office:</strong> PT 12393-1 Jalan BBN 1/7D, Putra Nilai, 71800 Nilai, Negeri Sembilan</p>
-<p><strong>Head Office (Sabah):</strong> Lot 42, Block E, Plaza 333, 89500 Penampang, Sabah</p>
-<p><strong>Branch (Sarawak):</strong> Danum Sinar Land, Belaga, Kapit, Sarawak</p>
-<p><strong>Email:</strong> <a href="mailto:medakomhq@gmail.com">medakomhq@gmail.com</a></p>
-<p><strong>Phone:</strong> 011-2327 7465</p>
-</section>
-
-</div>
-<footer><p>© 2025 Medakom Sdn. Bhd. — All Rights Reserved | Designed by Shella Chong</p></footer>
+toggle.onclick = () => {
+visible = !visible;
+info.style.display = visible ? 'block' : 'none';
+toggle.textContent = visible ? '▲ Hide Info' : '▼ View More';
+};
+</script>
 </body>
 </html>
