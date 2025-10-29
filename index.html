@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- META / SEO -->
+<!-- ===================================== -->
+<!-- META / SEO / VERIFICATION -->
+<!-- ===================================== -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
@@ -18,6 +20,9 @@
 
 <title>MEDAKOM SDN. BHD. | Official Website</title>
 
+<!-- ===================================== -->
+<!-- GLOBAL STYLES -->
+<!-- ===================================== -->
 <style>
 /* RESET */
 * {
@@ -35,6 +40,7 @@ box-sizing: border-box;
 --card-bg: #ffffff; /* panel putih */
 --footer-bg: #003366;
 --text-dark: #000000;
+--text-mid: #444444;
 --text-soft: #555555;
 --shadow-card: 0 3px 8px rgba(0,0,0,0.12);
 }
@@ -54,8 +60,8 @@ header {
 width: 100%;
 background: linear-gradient(
 to right,
-rgba(234,243,255,0.8),
-rgba(255,255,255,0.8)
+rgba(234,243,255,0.9),
+rgba(255,255,255,0.9)
 );
 box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 position: sticky;
@@ -67,50 +73,41 @@ align-items: center;
 justify-content: space-between;
 padding: 12px 5%;
 flex-wrap: wrap;
-backdrop-filter: blur(4px);
 }
 
-/* kiri: logo */
+/* kiri: logo block */
 .brand-block {
 display: flex;
 align-items: center;
 gap: 12px;
 }
 
-/*
-LOGO FIX:
-- Besar
-- Cuba “hilangkan kotak putih keras”
-- Lembutkan tepi dengan mask gradient + shadow lembut
-*/
-.brand-logo-wrapper {
-position: relative;
-display: inline-block;
-border-radius: 16px;
-overflow: hidden; /* potong sudut supaya tak nampak petak */
-box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+/* wrapper untuk hilang rasa "kotak putih" dan buat nampak lembut */
+.brand-logo-wrap {
 background: radial-gradient(
 circle at 50% 50%,
 rgba(255,255,255,0) 40%,
-rgba(255,255,255,0.6) 100%
+rgba(255,255,255,0.4) 100%
 );
+border-radius: 20px;
+padding: 6px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .brand-logo {
-display: block;
-width: 200px; /* besar */
+width: 200px; /* LOGO M BESAR */
 height: auto;
 object-fit: contain;
-
-/* kecilkan rasa putih dan bagi warna lebih “naik” */
 filter:
 brightness(1.08)
-contrast(1.07)
-saturate(1.15)
-drop-shadow(0 3px 6px rgba(0,0,0,0.35));
+contrast(1.05)
+drop-shadow(0 4px 8px rgba(0,0,0,0.28));
 }
 
-/* kanan: menu nav */
+/* kanan: menu nav dengan ▼ */
 nav ul {
 list-style: none;
 display: flex;
@@ -127,9 +124,22 @@ font-size: 0.95rem;
 font-weight: 600;
 color: #000;
 transition: color 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 4px;
+}
+
+nav ul li a span.caret {
+font-size: 0.75rem;
+line-height: 1;
+color: #000;
 }
 
 nav ul li a:hover {
+color: var(--accent-red);
+}
+
+nav ul li a:hover span.caret {
 color: var(--accent-red);
 }
 
@@ -147,9 +157,9 @@ max-width: 900px;
 margin: 0 auto;
 }
 
-/* MEDAKOM SDN. BHD. SATU KALI DI TENGAH */
+/* MEDAKOM SDN. BHD. — BESAR SATU KALI SAHAJA */
 .hero-company-name {
-font-size: 3.2rem;
+font-size: 3.2rem; /* besar */
 font-weight: 800;
 color: var(--text-dark); /* hitam */
 letter-spacing: 2px;
@@ -158,13 +168,15 @@ margin-bottom: 20px;
 line-height: 1.2;
 }
 
+/* Empowering People... (biru korporat) */
 .hero-main-line {
 font-size: 1.6rem;
 font-weight: 600;
-color: var(--deep-blue); /* biru untuk "Empowering..." */
+color: var(--deep-blue); /* biru profesional */
 line-height: 1.4;
 }
 
+/* Sustainable Environment... (kelabu lembut) */
 .hero-sub-line {
 font-size: 1.1rem;
 color: var(--text-soft); /* kelabu lembut */
@@ -192,7 +204,7 @@ background-image: linear-gradient(to bottom, #a81818, #7f1212);
 }
 
 /* ===================================== */
-/* GENERIC SECTIONS */
+/* GENERIC SECTION STYLES */
 /* ===================================== */
 section {
 width: 100%;
@@ -222,7 +234,7 @@ letter-spacing: 0.5px;
 
 .section-subtext {
 font-size: 0.95rem;
-color: #444;
+color: var(--text-mid);
 text-align: center;
 margin: -10px auto 30px auto;
 line-height: 1.6;
@@ -332,8 +344,10 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
+
 background: rgba(0,0,0,0.8);
-display: none;
+
+display: none; /* hidden default */
 align-items: center;
 justify-content: center;
 padding: 20px;
@@ -388,6 +402,11 @@ color: #222;
 margin-bottom: 15px;
 }
 
+.contact-line strong {
+font-weight: 600;
+color: var(--deep-blue);
+}
+
 .email-link {
 color: var(--deep-blue);
 font-weight: 600;
@@ -421,10 +440,6 @@ gap: 16px;
 
 .brand-block {
 flex-direction: column;
-}
-
-.brand-logo-wrapper {
-border-radius: 14px;
 }
 
 .brand-logo {
@@ -485,40 +500,48 @@ height: 130px;
 
 <body>
 
+<!-- ===================================== -->
 <!-- HEADER -->
+<!-- ===================================== -->
 <header>
-<!-- LOGO KIRI (tanpa tulisan syarikat sebelah dia) -->
+<!-- LOGO KIRI (tiada tulisan MEDAKOM di sini) -->
 <div class="brand-block">
-<div class="brand-logo-wrapper">
+<div class="brand-logo-wrap">
 <img src="IMG_6349.jpeg" alt="Medakom Logo" class="brand-logo" />
 </div>
 </div>
 
-<!-- MENU KANAN (TIADA ▼) -->
+<!-- MENU KANAN DENGAN ▼ -->
 <nav>
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#corevalues">About</a></li>
-<li><a href="#leadership">Leadership</a></li>
-<li><a href="#vision">Vision</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#home">Home <span class="caret">▼</span></a></li>
+<li><a href="#corevalues">About <span class="caret">▼</span></a></li>
+<li><a href="#leadership">Leadership <span class="caret">▼</span></a></li>
+<li><a href="#vision">Vision <span class="caret">▼</span></a></li>
+<li><a href="#services">Services <span class="caret">▼</span></a></li>
+<li><a href="#gallery">Gallery <span class="caret">▼</span></a></li>
+<li><a href="#contact">Contact <span class="caret">▼</span></a></li>
 </ul>
 </nav>
 </header>
 
-<!-- HERO -->
+<!-- ===================================== -->
+<!-- HERO / COMPANY NAME (SATU KALI SAJA) -->
+<!-- ===================================== -->
 <section id="home">
 <div class="hero-wrapper">
+
+<!-- MEDAKOM BESAR (HITAM) -->
 <div class="hero-company-name">
 MEDAKOM SDN. BHD.
 </div>
 
+<!-- SLOGAN (BIRU) -->
 <div class="hero-main-line">
 Empowering People, Building Futures
 </div>
 
+<!-- SUBLINE (KELABU) -->
 <div class="hero-sub-line">
 Sustainable Environment for Future Generations
 </div>
@@ -527,7 +550,9 @@ Sustainable Environment for Future Generations
 </div>
 </section>
 
+<!-- ===================================== -->
 <!-- CORE VALUES -->
+<!-- ===================================== -->
 <section id="corevalues">
 <div class="block-card">
 <div class="section-title">Core Values</div>
@@ -546,7 +571,9 @@ Sustainable Environment for Future Generations
 </div>
 </section>
 
-<!-- SERVICES / KEY STRENGTH -->
+<!-- ===================================== -->
+<!-- KEY STRENGTH / SERVICES -->
+<!-- ===================================== -->
 <section id="services">
 <div class="block-card">
 <div class="section-title">Our Services / Key Strength</div>
@@ -562,7 +589,9 @@ Sustainable Environment for Future Generations
 </div>
 </section>
 
+<!-- ===================================== -->
 <!-- LEADERSHIP -->
+<!-- ===================================== -->
 <section id="leadership">
 <div class="block-card">
 <div class="section-title">Leadership</div>
@@ -642,7 +671,9 @@ Medakom Group.
 </div>
 </section>
 
+<!-- ===================================== -->
 <!-- VISION & MISSION -->
+<!-- ===================================== -->
 <section id="vision">
 <div class="block-card">
 <div class="section-title">Vision &amp; Mission</div>
@@ -655,7 +686,9 @@ Medakom Group.
 </div>
 </section>
 
-<!-- GALLERY -->
+<!-- ===================================== -->
+<!-- GALLERY (20 IMAGES + LIGHTBOX) -->
+<!-- ===================================== -->
 <section id="gallery">
 <div class="block-card">
 <div class="section-title">Company Gallery</div>
@@ -671,60 +704,79 @@ Tap / click any image to view.
 <a href="#" onclick="openLightbox('images_Page_01.jpg');return false;">
 <img src="images_Page_01.jpg" alt="Medakom photo 1" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_02.jpg');return false;">
 <img src="images_Page_02.jpg" alt="Medakom photo 2" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_03.jpg');return false;">
 <img src="images_Page_03.jpg" alt="Medakom photo 3" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_04.jpg');return false;">
 <img src="images_Page_04.jpg" alt="Medakom photo 4" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_05.jpg');return false;">
 <img src="images_Page_05.jpg" alt="Medakom photo 5" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_06.jpg');return false;">
 <img src="images_Page_06.jpg" alt="Medakom photo 6" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_07.jpg');return false;">
 <img src="images_Page_07.jpg" alt="Medakom photo 7" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_08.jpg');return false;">
 <img src="images_Page_08.jpg" alt="Medakom photo 8" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_09.jpg');return false;">
 <img src="images_Page_09.jpg" alt="Medakom photo 9" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_10.jpg');return false;">
 <img src="images_Page_10.jpg" alt="Medakom photo 10" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_11.jpg');return false;">
 <img src="images_Page_11.jpg" alt="Medakom photo 11" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_12.jpg');return false;">
 <img src="images_Page_12.jpg" alt="Medakom photo 12" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_13.jpg');return false;">
 <img src="images_Page_13.jpg" alt="Medakom photo 13" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_14.jpg');return false;">
 <img src="images_Page_14.jpg" alt="Medakom photo 14" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_15.jpg');return false;">
 <img src="images_Page_15.jpg" alt="Medakom photo 15" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_16.jpg');return false;">
 <img src="images_Page_16.jpg" alt="Medakom photo 16" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_17.jpg');return false;">
 <img src="images_Page_17.jpg" alt="Medakom photo 17" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_18.jpg');return false;">
 <img src="images_Page_18.jpg" alt="Medakom photo 18" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_19.jpg');return false;">
 <img src="images_Page_19.jpg" alt="Medakom photo 19" class="gallery-thumb" />
 </a>
+
 <a href="#" onclick="openLightbox('images_Page_20.jpg');return false;">
 <img src="images_Page_20.jpg" alt="Medakom photo 20" class="gallery-thumb" />
 </a>
@@ -732,7 +784,7 @@ Tap / click any image to view.
 </div>
 </section>
 
-<!-- LIGHTBOX OVERLAY -->
+<!-- LIGHTBOX OVERLAY (POP UP GAMBAR) -->
 <div id="lightboxOverlay" class="lightbox-overlay" onclick="closeLightbox()">
 <div class="lightbox-inner" onclick="event.stopPropagation()">
 <div class="lightbox-close" onclick="closeLightbox()">✕</div>
@@ -740,26 +792,28 @@ Tap / click any image to view.
 </div>
 </div>
 
+<!-- ===================================== -->
 <!-- CONTACT -->
+<!-- ===================================== -->
 <section id="contact">
 <div class="block-card">
 <div class="section-title">Contact Us</div>
 
 <div class="contact-line">
 <strong>Operation Office:</strong><br />
-Pt 12393-1, Jalan BBN 1/7D, Putra Indah, Putra Nilai,
+Pt 12393-1, Jalan BBN 1/7D, Putra Indah, Putra Nilai,<br />
 71800 Nilai, Negeri Sembilan, Malaysia
 </div>
 
 <div class="contact-line">
 <strong>Head Office (Sabah):</strong><br />
-Lot 42, Second Floor, Block E, Lorong Plaza 333-6,
+Lot 42, Second Floor, Block E, Lorong Plaza 333-6,<br />
 Plaza 333, 89500 Penampang, Sabah
 </div>
 
 <div class="contact-line">
 <strong>Branch Office (Sarawak):</strong><br />
-Danum Sinar Land, Lakin / Klayan Estate,
+Danum Sinar Land, Lakin / Klayan Estate,<br />
 96900 Belaga, Kapit, Sarawak
 </div>
 
@@ -775,13 +829,17 @@ Danum Sinar Land, Lakin / Klayan Estate,
 </div>
 </section>
 
+<!-- ===================================== -->
 <!-- FOOTER -->
+<!-- ===================================== -->
 <footer>
 <div>© 2025 MEDAKOM SDN. BHD. — All Rights Reserved</div>
 <div>Designed by Shella Chong</div>
 </footer>
 
+<!-- ===================================== -->
 <!-- LIGHTBOX SCRIPT -->
+<!-- ===================================== -->
 <script>
 function openLightbox(imgSrc) {
 var overlay = document.getElementById('lightboxOverlay');
@@ -790,4 +848,11 @@ img.src = imgSrc;
 overlay.classList.add('active');
 }
 
-function closeLight
+function closeLightbox() {
+var overlay = document.getElementById('lightboxOverlay');
+overlay.classList.remove('active');
+}
+</script>
+
+</body>
+</html>
