@@ -3,123 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Medakom Sdn. Bhd. — A trusted Malaysian manpower, outsourcing, logistics, timber trading, and reforestation management company delivering sustainable workforce solutions.">
+<meta name="description" content="Medakom Sdn. Bhd. — Trusted Malaysian manpower, outsourcing, logistics, trading, and reforestation management company.">
 <meta name="keywords" content="Medakom, manpower, outsourcing, HR Malaysia, logistics, timber trading, palm oil, reforestation, cleaning services, HR contracting">
 <meta name="author" content="Shella Chong">
 <meta name="google-site-verification" content="DBCS_jiteplxJtYIRvRMAw297dVduhSunsoYJ3m911mk">
 <title>Medakom Sdn. Bhd | Official Website</title>
+
 <style>
 body {
 margin: 0;
 font-family: "Poppins", sans-serif;
-background: #fafafa;
+background-color: #ffffff;
 color: #222;
 overflow-x: hidden;
-text-align: center;
 }
 
+/* HEADER */
 header {
-background: linear-gradient(90deg, #002147, #d62828);
-color: white;
+background-color: #ffffff;
+color: #003366;
 display: flex;
 align-items: center;
 justify-content: space-between;
-padding: 10px 40px;
+padding: 12px 50px;
 position: fixed;
-top: 0;
 width: 100%;
+top: 0;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 z-index: 10;
-box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 header img {
-width: 55px;
-height: 55px;
-border-radius: 50%;
-animation: rotate 10s linear infinite;
+width: 65px;
+height: auto;
+border-radius: 10px;
 }
 
-@keyframes rotate {
-0% {transform: rotate(0deg);}
-100% {transform: rotate(360deg);}
+h1 {
+flex-grow: 1;
+text-align: center;
+font-size: 1.7rem;
+font-weight: 600;
+color: #002147;
+margin: 0;
 }
 
 nav {
 display: flex;
-gap: 25px;
+gap: 20px;
 }
 
 nav a {
-color: white;
+color: #002147;
 text-decoration: none;
 font-weight: 500;
+transition: 0.3s;
 }
 
 nav a:hover {
-text-decoration: underline;
+color: #d62828;
 }
 
-h1 {
-font-size: 1.5rem;
-margin: 0;
+/* VIEW MORE BUTTON */
+#toggle {
+display: block;
+text-align: center;
+margin-top: 110px;
+font-size: 1.3rem;
+color: #002147;
+cursor: pointer;
 }
 
+/* HERO SECTION */
 .hero {
-margin-top: 120px;
-padding: 80px 20px;
-background: white;
+text-align: center;
+padding: 80px 20px 40px;
+background: linear-gradient(to bottom, #f8f9fa, #dfe7f2);
 }
 
 .hero h2 {
 font-size: 2rem;
 color: #002147;
-animation: fadein 2s;
+margin-bottom: 10px;
 }
 
 .hero p {
 font-size: 1.1rem;
 color: #444;
+margin-bottom: 20px;
 }
 
 .hero button {
-margin-top: 20px;
-background: #c1121f;
+background: #b71c1c;
 color: white;
 border: none;
-padding: 12px 28px;
-font-size: 1rem;
+padding: 12px 30px;
 border-radius: 5px;
+font-size: 1rem;
 cursor: pointer;
 transition: 0.3s;
 }
 
 .hero button:hover {
-background: #a10d19;
+background: #8a1313;
 }
 
-#toggle {
-font-size: 1.5rem;
-margin-top: 30px;
-cursor: pointer;
-color: #002147;
-animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-0%, 100% {transform: translateY(0);}
-50% {transform: translateY(5px);}
-}
-
+/* CONTENT */
 .content {
 display: none;
-padding: 40px;
-animation: fadein 1.5s;
-background: white;
+background-color: #ffffff;
+padding: 40px 80px;
 text-align: left;
-max-width: 900px;
-margin: 30px auto;
+max-width: 1000px;
+margin: 0 auto 50px;
+box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 border-radius: 10px;
-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+animation: fadein 1s;
 }
 
 @keyframes fadein {
@@ -131,22 +130,37 @@ h3 {
 color: #002147;
 border-bottom: 2px solid #d62828;
 display: inline-block;
-padding-bottom: 5px;
+margin-top: 30px;
+padding-bottom: 4px;
 }
 
 ul {
-line-height: 1.7;
+line-height: 1.8;
+margin-left: 20px;
 }
 
 footer {
-background: #002147;
+background-color: #002147;
 color: white;
+text-align: center;
 padding: 15px;
 font-size: 0.9rem;
 margin-top: 40px;
 }
+
+@media (max-width: 768px) {
+header {
+flex-direction: column;
+gap: 8px;
+}
+nav {
+flex-wrap: wrap;
+justify-content: center;
+}
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -156,24 +170,26 @@ margin-top: 40px;
 <a href="#">Home</a>
 <a href="#">About</a>
 <a href="#">Leadership</a>
-<a href="#">Vision & Mission</a>
+<a href="#">Vision</a>
 <a href="#">Services</a>
+<a href="#">Gallery</a>
 <a href="#">Contact</a>
 </nav>
 </header>
+
+<div id="toggle">▼ View More</div>
 
 <section class="hero">
 <h2>Empowering People, Building Futures</h2>
 <p>Sustainable Environment for Future Generation</p>
 <button>Contact Us</button>
-<div id="toggle">▼ View More</div>
 </section>
 
 <section id="info" class="content">
 <h3>CEO’s Message</h3>
 <p>In Medakom, we take pride in being one of Malaysia’s trusted providers of specialized manpower and outsourcing services.
-We are committed to supporting industries that depend heavily on foreign and local workers by providing ethical, reliable, and cost-effective workforce solutions.</p>
-<p>Our company has built a strong reputation for professionalism and reliability, backed by a talented team of HR experts, service consultants, and field specialists.
+We are committed to supporting industries that depend heavily on both foreign and local workers by providing ethical, reliable, and cost-effective workforce solutions.</p>
+<p>Our company has built a strong reputation for professionalism and reliability, backed by a talented team of HR experts, consultants, and field specialists.
 Together, we aim to create long-term value for our partners and contribute to Malaysia’s economic growth.</p>
 <p><b>The CEO,</b><br>Mr. Andrew Chong (Aidil Chong)</p>
 
@@ -214,5 +230,6 @@ info.style.display = visible ? 'block' : 'none';
 toggle.textContent = visible ? '▲ Hide Info' : '▼ View More';
 };
 </script>
+
 </body>
 </html>
