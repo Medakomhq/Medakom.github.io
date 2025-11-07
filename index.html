@@ -1,47 +1,428 @@
-* ==== LOGO & NAV – BESARKAN & TEPI KIRI ==== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ===== META / SEO ===== -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+<title>MEDAKOM SDN. BHD. | Official Corporate Website</title>
+
+<meta name="description" content="Medakom Sdn. Bhd. — Malaysian manpower & outsourcing company delivering compliant, ethical and sustainable workforce solutions: HR contracting, logistics, timber trading, palm oil & reforestation management, industrial support and cleaning services." />
+<meta name="keywords" content="Medakom, manpower, outsourcing, recruitment, contractor, timber trading, palm oil, reforestation, logistics, cleaning services, Malaysia" />
+<meta name="author" content="Mrs. Shella Chong" />
+
+<style>
+/* ====== RESET / BASE ====== */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;scroll-behavior:smooth}
 :root{
---logo-h-desktop: 120px; /* ubah ke 140–160px jika mahu lebih besar */
---logo-h-mobile: 70px;
+--sky-top:#eaf3ff; --sky-bottom:#ffffff;
+--deep:#0a1a35; --mid:#0055a5; --accent:#b31b1b;
+--text:#222; --muted:#666; --card:#fff;
+--shadow:0 6px 18px rgba(0,0,0,.10);
+--radius:14px; --maxw:1140px;
+--logo-h-desktop:160px; --logo-h-mobile:90px;
+}
+body{
+font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+color:var(--text);
+background:linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
+-webkit-font-smoothing:antialiased;
 }
 
-/* Header gunakan grid: kolom 1 = logo, kolom 2 = menu */
+/* ====== HEADER (FULL-WIDTH, LOGO BESAR KIRI) ====== */
 header{
-position: sticky; top: 0; z-index: 999;
-background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.08);
-padding: 12px 3% 12px 3%;
-display: grid;
-grid-template-columns: auto 1fr;
-align-items: center;
-column-gap: 28px;
+width:100%;
+background:#fff;
+position:sticky; top:0; z-index:999;
+box-shadow:0 2px 12px rgba(0,0,0,.08);
 }
-
-/* Pastikan logo duduk di kiri & tidak mengecil */
-.brand{justify-self: start; margin: 0;}
+.head-inner{
+max-width:1400px; margin:0 auto; padding:10px 4%;
+display:flex; align-items:center; justify-content:space-between; gap:24px;
+}
+.brand{flex:0 0 auto}
 .brand img{
-height: var(--logo-h-desktop);
-width: auto; /* jaga nisbah logo */
-object-fit: contain;
-display: block;
-mix-blend-mode: multiply;
-flex: 0 0 auto; /* jangan shrink */
+height:var(--logo-h-desktop);
+width:auto; object-fit:contain; display:block; mix-blend-mode:multiply;
+margin-left:0; /* rapat kiri */
 }
-
-/* Menu rapat ke kanan */
-nav{justify-self: end;}
+nav{flex:1 1 auto}
 nav ul{
-margin: 0; padding: 0; list-style: none;
-display: flex; gap: 22px; flex-wrap: wrap; justify-content: flex-end;
+margin:0; padding:0; list-style:none;
+display:flex; gap:30px; flex-wrap:wrap; justify-content:flex-end; align-items:center;
 }
-nav a{color:#000; text-decoration:none; font-weight:700; font-size:1rem}
-nav a:hover{color:#b31b1b}
+nav a{
+text-decoration:none; color:#000; font-weight:800; letter-spacing:.8px;
+font-size:17px; transition:color .18s ease;
+}
+nav a:hover{ color:var(--accent); }
 
-/* Responsif mudah */
-@media (max-width: 980px){
-header{
-grid-template-columns: 1fr;
-row-gap: 10px; padding: 12px 4%;
+/* ====== GENERIC SECTIONS / CARDS ====== */
+section{scroll-margin-top: 120px;}
+.section{padding:70px 6%; display:flex; justify-content:center;}
+.card{
+width:100%; max-width:var(--maxw); background:var(--card);
+border-radius:var(--radius); box-shadow:var(--shadow); padding:42px 34px;
 }
-.brand{justify-self:center;}
-.brand img{height: var(--logo-h-mobile);}
-nav ul{justify-content:center; gap: 16px;}
+.title{
+text-align:center; color:var(--deep); font-size:2rem; font-weight:900; margin:0 0 12px;
+letter-spacing:.3px;
 }
+.lead{margin:4px 0 22px; text-align:center; color:var(--muted)}
+.twocol{display:grid; grid-template-columns:1fr 1fr; gap:28px}
+.bullets{margin:0; padding-left:18px}
+.bullets li{margin:8px 0}
+.sep{height:1px; background:#eee; margin:28px 0}
+
+/* ====== HERO ====== */
+#home{
+text-align:center; padding:150px 8% 120px;
+background:linear-gradient(to bottom, var(--sky-top), #fff 70%);
+}
+.hero-title{font-size:3.2rem; font-weight:900; color:var(--deep); margin:0 0 10px}
+.hero-line{font-size:1.5rem; font-weight:700; color:var(--mid)}
+.hero-sub{color:var(--muted); margin-top:10px}
+.btn{
+display:inline-block; margin-top:26px; padding:12px 28px; border-radius:8px;
+color:#fff; background:linear-gradient(#cc1f1f,#a81818); text-decoration:none; font-weight:700;
+box-shadow:0 4px 10px rgba(0,0,0,.18)
+}
+.btn:hover{ background:linear-gradient(#a81818,#7f1212) }
+
+/* ====== TABLE ====== */
+table{width:100%; border-collapse:collapse; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.06)}
+th,td{padding:12px 14px; border:1px solid #e6e6e6; text-align:left}
+thead th{background:#eef4ff; color:#0f2c5c}
+
+/* ====== GALLERY + LIGHTBOX ====== */
+.grid{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
+.thumb{
+width:220px; height:160px; object-fit:cover; border-radius:10px; cursor:pointer;
+box-shadow:0 3px 10px rgba(0,0,0,.18); transition:transform .22s
+}
+.thumb:hover{ transform:scale(1.05) }
+.lightbox{position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; padding:24px; z-index:2000}
+.lightbox.active{display:flex}
+.lightbox-inner{max-width:92%; max-height:86%; position:relative}
+.lightbox-inner img{width:100%; height:auto; max-height:86vh; border-radius:12px; background:#fff}
+.lightbox-close{
+position:absolute; top:-10px; right:-10px; width:30px; height:30px; border-radius:50%;
+background:#fff; color:#000; display:flex; align-items:center; justify-content:center;
+font-weight:900; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.4)
+}
+
+/* ====== FOOTER ====== */
+footer{background:var(--deep); color:#fff; text-align:center; padding:28px 10px; font-size:.9rem}
+
+/* ====== RESPONSIVE ====== */
+@media(max-width:1100px){
+.brand img{height:140px;}
+}
+@media(max-width:980px){
+.head-inner{flex-direction:column; padding:12px 4%}
+.brand img{height:var(--logo-h-mobile)}
+nav ul{justify-content:center; gap:18px}
+#home{padding:120px 6% 90px}
+.hero-title{font-size:2.4rem}
+.thumb{width:180px; height:130px}
+.twocol{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER (FULL-WIDTH) ===== -->
+<header>
+<div class="head-inner">
+<div class="brand">
+<!-- Pastikan nama fail betul: logo-medakom.PNG -->
+<img src="logo-medakom.PNG" alt="Medakom Logo">
+</div>
+<nav>
+<ul>
+<li><a href="#home">HOME</a></li>
+<li><a href="#about">ABOUT</a></li>
+<li><a href="#vision">VISION</a></li>
+<li><a href="#governance">GOVERNANCE</a></li>
+<li><a href="#leadership">LEADERSHIP</a></li>
+<li><a href="#licenses">LICENSES</a></li>
+<li><a href="#financials">FINANCIALS</a></li>
+<li><a href="#customers">CUSTOMERS</a></li>
+<li><a href="#gallery">GALLERY</a></li>
+<li><a href="#contact">CONTACT</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="home">
+<div class="hero-title">MEDAKOM SDN. BHD.</div>
+<div class="hero-line">Empowering People, Building Futures</div>
+<div class="hero-sub">Sustainable Environment for Future Generations</div>
+<a href="#contact" class="btn">Contact Us</a>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+<div class="card">
+<h2 class="title">About Medakom</h2>
+<p class="lead">
+Medakom Sdn. Bhd. is a Malaysian-based manpower and outsourcing company established to provide integrated
+workforce and human capital management solutions across multiple industries — including construction, plantation,
+timber trading, logistics, manufacturing, and cleaning services.
+</p>
+<p>
+Founded with a mission to support Malaysia’s industrial and human capital growth, Medakom has earned a reputation for
+discipline, compliance, and reliability. With operations in Peninsular Malaysia, Sabah, and Sarawak, the company
+provides sustainable manpower services that align with both government regulations and international standards.
+</p>
+<p>
+We believe in long-term partnerships, ethical recruitment, and developing a workforce that supports Malaysia’s
+economic and environmental sustainability.
+</p>
+</div>
+</section>
+
+<!-- ===== VISION & MISSION ===== -->
+<section id="vision" class="section">
+<div class="card">
+<h2 class="title">Vision & Mission</h2>
+<div class="twocol">
+<div>
+<h3>Vision</h3>
+<p>To be a trusted manpower and outsourcing partner — delivering reliable, compliant, and sustainable workforce solutions that strengthen industries and empower communities.</p>
+</div>
+<div>
+<h3>Mission</h3>
+<p>To provide ethical, efficient, and responsible human resource solutions that empower both people and businesses. Medakom integrates integrity, compliance, and human development to ensure a workforce ecosystem that grows sustainably for future generations.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== GOVERNANCE ===== -->
+<section id="governance" class="section">
+<div class="card">
+<h2 class="title">Governance & Compliance</h2>
+<p class="lead">Medakom upholds strong governance standards in line with Malaysian labour and corporate laws:</p>
+<ul class="bullets">
+<li>Employment Act 1955</li>
+<li>Private Employment Agencies Act 1981 (Akta 246)</li>
+<li>Labour Ordinance (Sabah & Sarawak)</li>
+<li>Occupational Safety and Health Act (DOSH)</li>
+<li>HRD Corp Registered Training Provider</li>
+<li>ESG (Environmental, Social & Governance) Compliance</li>
+</ul>
+<p>We ensure every operation is transparent, ethical, and legally compliant, protecting the welfare and dignity of all employees under our care.</p>
+</div>
+</section>
+
+<!-- ===== LEADERSHIP ===== -->
+<section id="leadership" class="section">
+<div class="card">
+<h2 class="title">Leadership</h2>
+
+<!-- CEO -->
+<h3>CEO’s Message — Mr. Andrew Chong (Aidil Chong)</h3>
+<p><i>“At Medakom, we do more than provide manpower — we build trust, discipline, and continuity. Every partnership and every worker under our supervision reflects our promise of integrity, reliability, and long-term sustainability. Our goal is not just to meet industry demands but to elevate Malaysia’s standards of responsible workforce management.”</i></p>
+
+<div class="twocol">
+<div>
+<h4>Educational Background</h4>
+<ul class="bullets">
+<li><b>Higher Diploma in Accounting (1990)</b> — London Chamber of Commerce and Industry (LCCI)</li>
+</ul>
+
+<h4>Core Business Fields</h4>
+<ul class="bullets">
+<li>Manpower Supply, Management & Recruitment</li>
+<li>Timber Trading (Import & Export)</li>
+<li>Construction (C7 – Civil, Infrastructure & Road)</li>
+<li>Barge & Tugboat Services (Armour Rock, Sand & Timber Transport)</li>
+<li>Oil Palm & Forestry Talent Management / Estate Operations</li>
+<li>Cleaning & Facilities Services</li>
+<li>Manufacturing Manpower Solutions</li>
+<li>Softwood Trading & Exporting (Acacia, Pelita, Albizia)</li>
+</ul>
+</div>
+<div>
+<h4>Professional Experience (1991–2025)</h4>
+<ul class="bullets">
+<li>Human Resources & Manpower Consultant — <b>30 years</b></li>
+<li>Manufacturing / Construction / Factory Operations — <b>30 years</b></li>
+<li>Palm Oil Estate Management — <b>10 years</b></li>
+<li>G7 Cleaning & Services Management — <b>18 years</b></li>
+<li>Shipment & Barge Agency; Logistics & Trading Management — <b>20 years</b></li>
+<li>Quarry & River Sand Trader; Softwood Timber Trader (regional exports)</li>
+</ul>
+</div>
+</div>
+
+<div class="sep"></div>
+
+<!-- Director -->
+<h3>Director’s Message — Mrs. Shella Chong (Melawati)</h3>
+<p><i>“Leadership is the courage to stand firm with integrity while empowering others to rise with you. At Medakom, I believe that true success is built through discipline, compassion, and purpose — transforming challenges into opportunities and empowering every level of our organization to grow with pride. As a Director, my commitment is to ensure that Medakom operates with excellence, accountability, and long-term vision. Every strategy we pursue and every partnership we build is guided by strong governance, human capital development, and sustainable impact. We are not only managing a business — we are building a legacy of trust, responsibility, and empowerment for Malaysia’s future generations.”</i></p>
+
+<div class="twocol">
+<div>
+<h4>Educational Background</h4>
+<ul class="bullets">
+<li><b>Currently pursuing MBA</b> — International University of Malaya-Wales (IUMW), Malaysia — <b>Commencing January 2026</b></li>
+<li><b>Bachelor of Management (2014)</b> — Sekolah Tinggi Ilmu Ekonomi STIE–ISM, Indonesia — <b>GPA 3.27</b></li>
+<li><b>Diploma in Management</b> — Sekolah Tinggi Management IMMI, Indonesia — <b>GPA 3.50</b></li>
+<li><b>Internship Certificate (2007)</b> — RSUD Adjidarmo Rangkasbitung — <b>GPA 4.00</b></li>
+<li><b>Certificate of Competence (2008)</b> — LEPISI Institution — <b>GPA 3.35</b></li>
+</ul>
+</div>
+<div>
+<h4>Professional Experience</h4>
+<ul class="bullets">
+<li><b>2017–2025</b> — Director, Medakom Sdn. Bhd. — Oversees HR contracting, logistics, and strategic workforce operations.</li>
+<li><b>2021–2025</b> — Director, SS Beauty Legacy Sdn. Bhd. — Supervises business design, retail & trading activities.</li>
+<li><b>2022–2025</b> — Director, Mepacom Sdn. Bhd. — Manages cleaning & traditional wellness operations.</li>
+<li><b>2008–2015</b> — Administrative & Finance Roles (Indonesia) — Purchasing, sales & financial management.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== LICENSES ===== -->
+<section id="licenses" class="section">
+<div class="card">
+<h2 class="title">Licenses & Accreditation</h2>
+<p class="lead">Officially recognised by Malaysian authorities to operate manpower, outsourcing and recruitment services.</p>
+<ul class="bullets">
+<li><b>Kementerian Hal Ehwal Dalam Negeri (KDN)</b> — Certified to supply and manage foreign workers (outsourcing). License Ref: <b>KHEIDN:100/637/1-4(352)</b> (since <b>15 January 2007</b>).</li>
+<li><b>Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)</b> — Private Employment Agencies Act 1981, <b>Licence B — No. 01998</b> (valid until <b>30 September 2025</b>).</li>
+<li><b>HRD Corp</b> — Registered Training Provider.</li>
+<li><b>CIDB</b> — G7 Contractor Classification.</li>
+<li><b>MTCC</b> — Timber Export Licence (softwood / acacia).</li>
+<li><b>SSM Malaysia</b> — Incorporated, active status.</li>
+</ul>
+</div>
+</section>
+
+<!-- ===== FINANCIALS ===== -->
+<section id="financials" class="section">
+<div class="card">
+<h2 class="title">Financial Projection & Stability</h2>
+<table>
+<thead>
+<tr><th>Source / Facility</th><th style="text-align:right">Amount (RM / USD)</th><th>Details</th></tr>
+</thead>
+<tbody>
+<tr><td>AmBank Berhad</td><td style="text-align:right">RM 1,700,000</td><td>Term loan / Overdraft</td></tr>
+<tr><td>CIMB Bank</td><td style="text-align:right">RM 738,000</td><td>Term loan facility</td></tr>
+<tr><td>MAAX Group</td><td style="text-align:right">RM 2,000,000</td><td>Overdraft collateral facility</td></tr>
+<tr><td>General Reserve Fund</td><td style="text-align:right">RM 2,000,000</td><td>Fixed deposit (Director fund)</td></tr>
+<tr><td>BHIC Technologies Sdn. Bhd.</td><td style="text-align:right">RM 5,000,000</td><td>Construction subsidiary standby fund</td></tr>
+<tr><td>Overseas Collateral Facility</td><td style="text-align:right">USD 50,000,000</td><td>Asset-backed financing</td></tr>
+</tbody>
+</table>
+<p class="lead" style="margin-top:16px"><b>Fixed Assets:</b> Commercial Shop Lot (4 Levels) — Estimated value RM 2,000,000+</p>
+</div>
+</section>
+
+<!-- ===== CUSTOMERS ===== -->
+<section id="customers" class="section">
+<div class="card">
+<h2 class="title">Our Customers & Strategic Partners</h2>
+<p class="lead">Selected clients served by Medakom across aviation, plantation, F&B, manufacturing and logistics:</p>
+<p style="text-align:center; line-height:2">
+AirAsia • Malaysia Airlines • POS Aviation • Felcra Berhad • KK Mart • 99 Speedmart • 7-Eleven • PappaRich • Secret Recipe • Top Glove • Castwell • Yamagata • RubbereX • Dongwha • BSSB • Puncak Niaga • Danum Sinar Sdn. Bhd. • Malaysia Airports (UTW) • Kayaku Safety Systems Malaysia • SHC Precision Co. Ltd.
+</p>
+</div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery" class="section">
+<div class="card">
+<h2 class="title">Company Gallery</h2>
+<p class="lead">Tap any photo to view full size.</p>
+<div class="grid" id="gal"></div>
+</div>
+</section>
+
+<!-- ===== LIGHTBOX ===== -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<div class="lightbox-inner" onclick="event.stopPropagation()">
+<div class="lightbox-close" onclick="closeLightbox()">✕</div>
+<img id="lightboxImage" src="" alt="Preview">
+</div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section">
+<div class="card">
+<h2 class="title">Contact Us</h2>
+<div class="twocol">
+<div>
+<p><b>Operation Office (Nilai)</b><br>
+PT. 12993-1, Jalan BBN 1/7D, Putra Indah, Putra Nilai,<br>
+71800 Nilai, Negeri Sembilan, Malaysia.
+</p>
+
+<p><b>Sabah Branch</b><br>
+Lot 42, Second Floor, Block E, Lorong Plaza 333-6,<br>
+Plaza 333, 89500 Penampang, Sabah.
+</p>
+
+<p><b>Sarawak Branch</b><br>
+Danum Sinar Land, Lakin / Klayan Estate,<br>
+96900 Belaga, Kapit, Sarawak.
+</p>
+</div>
+<div>
+<p><b>Email:</b><br>
+<a class="email" href="mailto:info@medakomhq.com.my">info@medakomhq.com.my</a><br>
+<a class="email" href="mailto:ceo@medakomhq.com.my">ceo@medakomhq.com.my</a><br>
+<a class="email" href="mailto:hr@medakomhq.com.my">hr@medakomhq.com.my</a><br>
+<a class="email" href="mailto:medakomhq@gmail.com">medakomhq@gmail.com</a>
+</p>
+<p><b>Office:</b> +60 16-868 1998<br>
+<b>Phone:</b> +60 11-2327 7465</p>
+<p><b>Website:</b> <a class="email" href="https://www.medakomhq.com.my">www.medakomhq.com.my</a></p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+<div>“Medakom Sdn. Bhd. continues to serve Malaysia’s key industries with integrity, responsibility, and excellence.”</div>
+<div style="margin-top:6px">© 2025 Medakom Sdn. Bhd. — All Rights Reserved • Designed by Mrs. Shella Chong</div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// Build gallery thumbnails from images_Page_01..20.jpg
+(function(){
+const gal = document.getElementById('gal');
+for(let i=1;i<=20;i++){
+const n = String(i).padStart(2,'0');
+const img = document.createElement('img');
+img.className = 'thumb';
+img.src = `images_Page_${n}.jpg`;
+img.alt = `Photo ${n}`;
+img.onclick = ()=>openLightbox(`images_Page_${n}.jpg`);
+gal.appendChild(img);
+}
+})();
+
+// Lightbox controls
+function openLightbox(src){
+const lb = document.getElementById('lightbox');
+const im = document.getElementById('lightboxImage');
+im.src = src; lb.classList.add('active');
+}
+function closeLightbox(){
+document.getElementById('lightbox').classList.remove('active');
+}
+</script>
+
+</body>
+</html>
