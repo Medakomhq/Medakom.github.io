@@ -41,7 +41,7 @@ nav ul{margin:0;padding:0;list-style:none;display:flex;gap:20px;flex-wrap:wrap}
 nav a{color:#000;text-decoration:none;font-weight:600;font-size:.96rem}
 nav a:hover{color:var(--accent)}
 
-/* ===== Sections / Cards ===== */
+/* ===== Sections ===== */
 section{scroll-margin-top:92px}
 .section{padding:70px 6%;display:flex;justify-content:center}
 .card{
@@ -64,26 +64,15 @@ color:#fff;background:linear-gradient(#cc1f1f,#a81818);text-decoration:none;font
 box-shadow:0 4px 10px rgba(0,0,0,.18)}
 .btn:hover{background:linear-gradient(#a81818,#7f1212)}
 
-/* ===== Tables ===== */
+/* ===== Table ===== */
 table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 th,td{padding:12px 14px;border:1px solid #e6e6e6;text-align:left}
 thead th{background:#eef4ff;color:#0f2c5c}
 
-/* ===== Gallery + Lightbox ===== */
-.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-.thumb{width:220px;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.18);transition:transform .22s}
-.thumb:hover{transform:scale(1.05)}
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:24px;z-index:2000}
-.lightbox.active{display:flex}
-.lightbox-inner{max-width:92%;max-height:86%;position:relative}
-.lightbox-inner img{width:100%;height:auto;max-height:86vh;border-radius:12px;background:#fff}
-.lightbox-close{position:absolute;top:-10px;right:-10px;width:30px;height:30px;border-radius:50%;background:#fff;color:#000;
-display:flex;align-items:center;justify-content:center;font-weight:900;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.4)}
-
-/* ===== Links / Footer ===== */
+/* ===== Footer ===== */
+footer{background:var(--deep);color:#fff;text-align:center;padding:28px 10px;font-size:.9rem}
 .email{color:var(--mid);font-weight:700;text-decoration:none}
 .email:hover{color:var(--accent)}
-footer{background:var(--deep);color:#fff;text-align:center;padding:28px 10px;font-size:.9rem}
 
 /* ===== Responsive ===== */
 @media(max-width:980px){
@@ -91,7 +80,6 @@ header{flex-direction:column}
 .brand img{width:260px}
 nav ul{justify-content:center}
 .hero-title{font-size:2.4rem}
-.thumb{width:180px;height:130px}
 .twocol{grid-template-columns:1fr}
 }
 </style>
@@ -101,7 +89,6 @@ nav ul{justify-content:center}
 <!-- ===== HEADER ===== -->
 <header>
 <div class="brand">
-<!-- Pastikan nama fail tepat seperti di repo: logo-medakom.PNG -->
 <img src="logo-medakom.PNG" alt="Medakom Logo">
 </div>
 <nav>
@@ -114,7 +101,6 @@ nav ul{justify-content:center}
 <li><a href="#licenses">Licenses</a></li>
 <li><a href="#financials">Financials</a></li>
 <li><a href="#customers">Customers</a></li>
-<li><a href="#gallery">Gallery</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -132,33 +118,23 @@ nav ul{justify-content:center}
 <section id="about" class="section">
 <div class="card">
 <h2 class="title">About Medakom</h2>
-<p class="lead">
-Medakom Sdn. Bhd. is a Malaysian-based manpower and outsourcing company delivering integrated
-workforce and human capital solutions across construction, plantation & reforestation,
-timber trading, logistics, manufacturing and cleaning services.
-</p>
-<p>
-Built on integrity, responsibility and sustainability, Medakom aligns all operations with Malaysian
-labour law and international best practices—focusing on long-term partnerships, ethical recruitment,
-and reliable workforce deployment across Peninsular Malaysia, Sabah and Sarawak.
-</p>
+<p class="lead">Medakom Sdn. Bhd. is a Malaysian-based manpower and outsourcing company delivering integrated workforce and human capital solutions across multiple industries — including construction, plantation, timber trading, logistics, manufacturing, and cleaning services.</p>
+<p>Founded with a mission to support Malaysia’s industrial and human capital growth, Medakom has earned a reputation for discipline, compliance, and reliability. With operations in Peninsular Malaysia, Sabah, and Sarawak, the company provides sustainable manpower services that align with both government regulations and international standards.</p>
 </div>
 </section>
 
-<!-- ===== VISION & MISSION ===== -->
+<!-- ===== VISION ===== -->
 <section id="vision" class="section">
 <div class="card">
 <h2 class="title">Vision & Mission</h2>
 <div class="twocol">
 <div>
 <h3>Vision</h3>
-<p>To be a trusted manpower and outsourcing partner—delivering reliable, compliant and sustainable
-workforce solutions that strengthen industries and empower communities.</p>
+<p>To be a trusted manpower and outsourcing partner — delivering reliable, compliant, and sustainable workforce solutions that strengthen industries and empower communities.</p>
 </div>
 <div>
 <h3>Mission</h3>
-<p>To provide ethical, efficient and responsible human resource solutions that empower both people
-and businesses—integrating integrity, compliance and human development to build a future-ready workforce ecosystem.</p>
+<p>To provide ethical, efficient, and responsible human resource solutions that empower both people and businesses — integrating integrity, compliance, and human development to build a sustainable workforce ecosystem for future generations.</p>
 </div>
 </div>
 </div>
@@ -168,13 +144,13 @@ and businesses—integrating integrity, compliance and human development to buil
 <section id="governance" class="section">
 <div class="card">
 <h2 class="title">Governance & Compliance</h2>
-<p class="lead">Medakom upholds strong corporate governance and legal compliance in line with Malaysian regulations and ESG principles.</p>
 <ul class="bullets">
-<li>Employment Act 1955 & Labour Ordinance (Sabah & Sarawak)</li>
+<li>Employment Act 1955</li>
 <li>Private Employment Agencies Act 1981 (Akta 246)</li>
-<li>Occupational Safety & Health (DOSH) requirements</li>
-<li>HRD Corp Malaysia – Registered Training Provider standards</li>
-<li>Transparent documentation, worker welfare & continuous internal audits</li>
+<li>Labour Ordinance (Sabah & Sarawak)</li>
+<li>Occupational Safety and Health Act (DOSH)</li>
+<li>HRD Corp Registered Training Provider</li>
+<li>ESG (Environmental, Social & Governance) Compliance</li>
 </ul>
 </div>
 </section>
@@ -184,67 +160,47 @@ and businesses—integrating integrity, compliance and human development to buil
 <div class="card">
 <h2 class="title">Leadership</h2>
 
-<!-- CEO -->
 <h3>CEO’s Message — Mr. Andrew Chong (Aidil Chong)</h3>
-<p><i>“At Medakom, we do more than provide manpower — we build trust, discipline, and continuity. Every partnership and every worker under our supervision reflects our promise of integrity, reliability, and long-term sustainability. Our goal is not just to meet industry demands but to elevate Malaysia’s standards of responsible workforce management.”</i></p>
+<p><i>“At Medakom, we do more than provide manpower — we build trust, discipline, and continuity. Every partnership and every worker under our supervision reflects our promise of integrity, reliability, and long-term sustainability.”</i></p>
 
-<div class="twocol">
-<div>
 <h4>Educational Background</h4>
-<ul class="bullets">
-<li><b>Higher Diploma in Accounting (1990)</b> — London Chamber of Commerce and Industry (LCCI)</li>
-</ul>
-<h4>Core Business Fields</h4>
-<ul class="bullets">
-<li>Manpower Supply, Management & Recruitment Consultancy</li>
-<li>Timber Trading (Import & Export)</li>
-<li>Construction (C7 – Civil, Infrastructure & Road)</li>
-<li>Barge & Tugboat Services for armour rock, sand & timber</li>
-<li>Oil Palm & Forestry Talent Management / Estate Operations</li>
-<li>Cleaning & Facilities Services</li>
-<li>Manufacturing Manpower Solutions</li>
-<li>Softwood Trading & Exporting (Acacia, Pelita, Albizia)</li>
-</ul>
-</div>
-<div>
+<ul class="bullets"><li>Higher Diploma in Accounting (1990) — London Chamber of Commerce and Industry (LCCI)</li></ul>
+
 <h4>Professional Experience (1991–2025)</h4>
 <ul class="bullets">
-<li>Human Resources & Manpower Consultant — <b>30 years</b></li>
-<li>Manufacturing / Construction / Factory Operations — <b>30 years</b></li>
-<li>Palm Oil Estate Management — <b>10 years</b></li>
-<li>G7 Cleaning & Services Management — <b>18 years</b></li>
-<li>Shipment & Barge Agency; Logistics & Trading Management — <b>20 years</b></li>
-<li>Quarry & River Sand Trader; Softwood Timber Trader (regional exports)</li>
+<li>Human Resources & Manpower Consultant — 30 years</li>
+<li>Manufacturing / Construction / Factory Operations — 30 years</li>
+<li>Palm Oil Estate Management — 10 years</li>
+<li>G7 Cleaning & Services Management — 18 years</li>
+<li>Shipment & Barge Agency — Quarry, Sand & Timber Transport</li>
+<li>Logistics & Trading Management — 20 years</li>
+<li>Softwood Timber Trader — Acacia, Pelita, Albizia</li>
 </ul>
-</div>
-</div>
 
 <hr style="margin:28px 0;border:none;border-top:1px solid #eee">
 
-<!-- Director -->
-<h3>Director’s Message — Mrs. Melawati (Shella Chong)</h3>
-<p><i>“Leadership is the courage to stand firm with integrity while empowering others to rise with you. At Medakom, I believe that true success is built through discipline, compassion and purpose—transforming challenges into opportunities and empowering every level of our organization to grow with pride. As a Director, my commitment is to ensure that Medakom operates with excellence, accountability and long-term vision. Every strategy we pursue and every partnership we build is guided by strong governance, human capital development and sustainable impact. We are not only managing a business—we are building a legacy of trust, responsibility and empowerment for Malaysia’s future generations.”</i></p>
+<h3>Director’s Message — Mrs. Shella Chong ( Melawati )</h3>
+<p><i>“Leadership is the courage to stand firm with integrity while empowering others to rise with you. At Medakom, I believe that true success is built through discipline, compassion, and purpose — transforming challenges into opportunities and empowering every level of our organization to grow with pride.”</i></p>
 
-<div class="twocol">
-<div>
 <h4>Educational Background</h4>
 <ul class="bullets">
-<li><b>Bachelor of Management (2014)</b> — STIE–ISM, Indonesia — <b>GPA 3.27</b></li>
-<li><b>Diploma in Management</b> — Sekolah Tinggi Management IMMI, Indonesia — <b>GPA 3.50</b></li>
-<li><b>Internship Certificate (2007)</b> — RSUD Adjidarmo Rangkasbitung — <b>GPA 4.00</b></li>
-<li><b>Certificate of Competence (2008)</b> — LEPISI Institution — <b>GPA 3.35</b></li>
+<li>Currently pursuing MBA (January 2026 – ongoing) — International University of Malaya–Wales (IUMW), Malaysia</li>
+<li>Bachelor of Management (2014) — STIE-ISM Indonesia (GPA 3.27)</li>
+<li>Diploma in Management — IMMI Indonesia (GPA 3.50)</li>
+<li>Internship Certificate (2007) — RSUD Adjidarmo Rangkasbitung (GPA 4.00)</li>
+<li>Certificate of Competence (2008) — LEPISI Institution (GPA 3.35)</li>
 </ul>
-</div>
-<div>
+
 <h4>Professional Experience</h4>
 <ul class="bullets">
-<li><b>2017–2025</b> — Director, Medakom Sdn. Bhd.</li>
-<li><b>2021–2025</b> — Director, SS Beauty Legacy Sdn. Bhd.</li>
-<li><b>2022–2025</b> — Director, Mepacom Sdn. Bhd.</li>
-<li><b>2008–2015</b> — Administrative & Finance roles (Indonesia)</li>
+<li>2017–2025 — Director, Medakom Sdn. Bhd.</li>
+<li>2021–2025 — Director, SS Beauty Legacy Sdn. Bhd.</li>
+<li>2022–2025 — Director, Mepacom Sdn. Bhd.</li>
+<li>2008–2015 — Administrative & Finance Roles (Indonesia)</li>
 </ul>
-</div>
-</div>
+
+<h4>Leadership Focus</h4>
+<p>Mrs. Shella Chong leads Medakom’s compliance, governance, and talent development agenda with unwavering commitment to discipline, ethics, and sustainability. Her foundation in Human Capital Management (MBA–IUMW) reinforces Medakom’s mission to integrate governance and human growth — ensuring the company remains forward-thinking, compliant, and people-centered.</p>
 </div>
 </section>
 
@@ -252,14 +208,13 @@ and businesses—integrating integrity, compliance and human development to buil
 <section id="licenses" class="section">
 <div class="card">
 <h2 class="title">Licenses & Accreditation</h2>
-<p class="lead">Officially recognised by Malaysian authorities to operate manpower, outsourcing and recruitment services.</p>
 <ul class="bullets">
-<li><b>Kementerian Hal Ehwal Dalam Negeri (KDN)</b> — Certified to supply and manage foreign workers (outsourcing). License Ref: <b>KHEIDN:100/637/1-4(352)</b> (since <b>15 January 2007</b>).</li>
-<li><b>Jabatan Tenaga Kerja Semenanjung Malaysia (JTKSM)</b> — Private Employment Agencies Act 1981, <b>Licence B — No. 01998</b> (valid until <b>30 September 2025</b>).</li>
-<li><b>HRD Corp</b> — Registered Training Provider.</li>
-<li><b>CIDB</b> — G7 Contractor Classification.</li>
-<li><b>MTCC</b> — Timber Export Licence (softwood / acacia).</li>
-<li><b>SSM Malaysia</b> — Incorporated, active status.</li>
+<li>KDN — Licence No. KHEIDN:100/637/1-4(352) (since 2007)</li>
+<li>JTKSM — Licence B No. 01998 (valid till 30 Sept 2025)</li>
+<li>HRD Corp Registered Training Provider</li>
+<li>CIDB G7 Contractor Classification</li>
+<li>MTCC Timber Export Licence (Softwood)</li>
+<li>SSM Malaysia Active Company Registration</li>
 </ul>
 </div>
 </section>
@@ -273,15 +228,15 @@ and businesses—integrating integrity, compliance and human development to buil
 <tr><th>Source / Facility</th><th>Amount (RM / USD)</th><th>Details</th></tr>
 </thead>
 <tbody>
-<tr><td>AmBank Berhad</td><td>RM 1,700,000</td><td>Term loan / Overdraft</td></tr>
+<tr><td>AmBank Berhad</td><td>RM 1,700,000</td><td>Term loan / overdraft</td></tr>
 <tr><td>CIMB Bank</td><td>RM 738,000</td><td>Term loan facility</td></tr>
 <tr><td>MAAX Group</td><td>RM 2,000,000</td><td>Overdraft collateral facility</td></tr>
-<tr><td>General Reserve Fund</td><td>RM 2,000,000</td><td>Fixed deposit (Director fund)</td></tr>
-<tr><td>BHIC Technologies Sdn. Bhd.</td><td>RM 5,000,000</td><td>Construction subsidiary standby fund</td></tr>
-<tr><td>Overseas Collateral Facility</td><td>USD 50,000,000</td><td>Asset-backed financing</td></tr>
+<tr><td>General Reserve Fund</td><td>RM 2,000,000</td><td>Fixed deposit / Director fund</td></tr>
+<tr><td>BHIC Technologies Sdn Bhd</td><td>RM 5,000,000</td><td>Fund support for construction subsidiaries (standby)</td></tr>
+<tr><td>Overseas Financing Collateral Facility</td><td>USD 50,000,000 (Fifty Million)</td><td>Secured against collateral asset</td></tr>
 </tbody>
 </table>
-<p class="lead" style="margin-top:16px"><b>Fixed Assets:</b> Commercial Shop Lot (4 Levels) — Estimated value RM 2,000,000+</p>
+<p class="lead" style="margin-top:16px"><b>Fixed Asset:</b> Commercial Shop Lot – 4 Levels (Value ≈ RM 2,000,000 +)</p>
 </div>
 </section>
 
@@ -289,29 +244,9 @@ and businesses—integrating integrity, compliance and human development to buil
 <section id="customers" class="section">
 <div class="card">
 <h2 class="title">Our Customers & Strategic Partners</h2>
-<p class="lead">Selected clients served by Medakom across aviation, plantation, F&B, manufacturing and logistics:</p>
-<p style="text-align:center;line-height:2">
-AirAsia • Malaysia Airlines • POS Aviation • Felcra Berhad • KK Mart • 99 Speedmart • 7-Eleven • PappaRich • Secret Recipe • Top Glove • Castwell • Yamagata • RubbereX • Dongwha • BSSB • Puncak Niaga • Danum Sinar Sdn. Bhd. • Malaysia Airports (UTW) • Kayaku Safety Systems Malaysia • SHC Precision Co. Ltd.
-</p>
+<p class="lead">AirAsia • Malaysia Airlines • POS Aviation • Felcra Berhad • KK Mart • 99 Speedmart • 7-Eleven • PappaRich • Secret Recipe • Top Glove • Castwell • Yamagata • RubbereX • Dongwha • BSSB • Puncak Niaga • Danum Sinar Sdn. Bhd. • Malaysia Airports (UTW) • Kayaku Safety Systems Malaysia • SHC Precision Co. Ltd.</p>
 </div>
 </section>
-
-<!-- ===== GALLERY ===== -->
-<section id="gallery" class="section">
-<div class="card">
-<h2 class="title">Company Gallery</h2>
-<p class="lead">Tap any photo to view full size.</p>
-<div class="grid" id="gal"></div>
-</div>
-</section>
-
-<!-- ===== LIGHTBOX ===== -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-<div class="lightbox-inner" onclick="event.stopPropagation()">
-<div class="lightbox-close" onclick="closeLightbox()">✕</div>
-<img id="lightboxImage" src="" alt="Preview">
-</div>
-</div>
 
 <!-- ===== CONTACT ===== -->
 <section id="contact" class="section">
@@ -319,19 +254,10 @@ AirAsia • Malaysia Airlines • POS Aviation • Felcra Berhad • KK Mart •
 <h2 class="title">Contact Us</h2>
 <div class="twocol">
 <div>
-<p><b>Operation Office (Nilai)</b><br>
-PT. 12993-1, Jalan BBN 1/7D, Putra Indah, Putra Nilai,<br>
-71800 Nilai, Negeri Sembilan, Malaysia.</p>
-
-<p><b>Sabah Branch</b><br>
-Lot 42, Second Floor, Block E, Lorong Plaza 333-6,<br>
-Plaza 333, 89500 Penampang, Sabah.</p>
-
-<p><b>Sarawak Branch</b><br>
-Danum Sinar Land, Lakin / Klayan Estate,<br>
-96900 Belaga, Kapit, Sarawak.</p>
+<p><b>Operation Office (Nilai)</b><br>PT. 12993-1, Jalan BBN 1/7D, Putra Indah, Putra Nilai,<br>71800 Nilai, Negeri Sembilan, Malaysia.</p>
+<p><b>Sabah Branch</b><br>Lot 42, Second Floor, Block E, Lorong Plaza 333-6,<br>Plaza 333, 89500 Penampang, Sabah.</p>
+<p><b>Sarawak Branch</b><br>Danum Sinar Land, Lakin / Klayan Estate,<br>96900 Belaga, Kapit, Sarawak.</p>
 </div>
-
 <div>
 <p><b>Email:</b><br>
 <a class="email" href="mailto:info@medakomhq.com.my">info@medakomhq.com.my</a><br>
@@ -339,8 +265,7 @@ Danum Sinar Land, Lakin / Klayan Estate,<br>
 <a class="email" href="mailto:hr@medakomhq.com.my">hr@medakomhq.com.my</a><br>
 <a class="email" href="mailto:medakomhq@gmail.com">medakomhq@gmail.com</a>
 </p>
-<p><b>Office:</b> +60 16-868 1998<br>
-<b>Phone:</b> +60 11-2327 7465</p>
+<p><b>Office:</b> +60 16-868 1998<br><b>Phone:</b> +60 11-2327 7465</p>
 <p><b>Website:</b> <a class="email" href="https://www.medakomhq.com.my">www.medakomhq.com.my</a></p>
 </div>
 </div>
@@ -349,34 +274,7 @@ Danum Sinar Land, Lakin / Klayan Estate,<br>
 
 <!-- ===== FOOTER ===== -->
 <footer>
-© 2025 Medakom Sdn. Bhd. — All Rights Reserved • Designed by Shella Chong
+© 2025 Medakom Sdn. Bhd. — All Rights Reserved • Designed by Mrs. Shella Chong
 </footer>
-
-<!-- ===== SCRIPTS ===== -->
-<script>
-// Build gallery thumbnails from images_Page_01..20.jpg
-(function(){
-const gal=document.getElementById('gal');
-for(let i=1;i<=20;i++){
-const n=String(i).padStart(2,'0');
-const img=document.createElement('img');
-img.className='thumb';
-img.src=`images_Page_${n}.jpg`;
-img.alt=`Photo ${n}`;
-img.onclick=()=>openLightbox(`images_Page_${n}.jpg`);
-gal.appendChild(img);
-}
-})();
-
-function openLightbox(src){
-const lb=document.getElementById('lightbox');
-const im=document.getElementById('lightboxImage');
-im.src=src; lb.classList.add('active');
-}
-function closeLightbox(){
-document.getElementById('lightbox').classList.remove('active');
-}
-</script>
 </body>
 </html>
-
