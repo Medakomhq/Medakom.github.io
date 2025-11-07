@@ -1,124 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MEDAKOM SDN. BHD. | Official Corporate Website</title>
-<meta name="description" content="Medakom Sdn. Bhd. — Malaysian manpower & outsourcing company delivering compliant, ethical and sustainable workforce solutions." />
-<meta name="keywords" content="Medakom, manpower, outsourcing, recruitment, contractor, Malaysia, logistics, cleaning services" />
-<meta name="robots" content="index, follow" />
-
-<style>
-body {
-margin: 0;
-font-family: "Poppins", Arial, sans-serif;
-background: linear-gradient(to bottom, #eaf3ff, #f9fbff);
-color: #222;
+* ==== LOGO & NAV – BESARKAN & TEPI KIRI ==== */
+:root{
+--logo-h-desktop: 120px; /* ubah ke 140–160px jika mahu lebih besar */
+--logo-h-mobile: 70px;
 }
-header {
-display: flex;
-justify-content: space-between;
+
+/* Header gunakan grid: kolom 1 = logo, kolom 2 = menu */
+header{
+position: sticky; top: 0; z-index: 999;
+background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.08);
+padding: 12px 3% 12px 3%;
+display: grid;
+grid-template-columns: auto 1fr;
 align-items: center;
-padding: 14px 6%;
-background: #fff;
-box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-position: sticky;
-top: 0;
-z-index: 100;
+column-gap: 28px;
 }
-.brand img {
-width: 420px;
-height: auto;
-mix-blend-mode: multiply;
+
+/* Pastikan logo duduk di kiri & tidak mengecil */
+.brand{justify-self: start; margin: 0;}
+.brand img{
+height: var(--logo-h-desktop);
+width: auto; /* jaga nisbah logo */
 object-fit: contain;
+display: block;
+mix-blend-mode: multiply;
+flex: 0 0 auto; /* jangan shrink */
 }
-nav ul {
-list-style: none;
-display: flex;
-gap: 18px;
-margin: 0;
-padding: 0;
-}
-nav a {
-color: #000;
-text-decoration: none;
-font-weight: 600;
-}
-nav a:hover {
-color: #b31b1b;
-}
-.hero {
-text-align: center;
-padding: 150px 10%;
-background: linear-gradient(to bottom, #eaf3ff, #fff 70%);
-}
-.hero h1 {
-font-size: 3rem;
-color: #003366;
-margin: 0 0 10px;
-font-weight: 900;
-}
-.hero h3 {
-color: #0055a5;
-font-size: 1.5rem;
-font-weight: 700;
-}
-.hero p {
-color: #666;
-}
-.btn {
-display: inline-block;
-background: linear-gradient(#cc1f1f,#a81818);
-color: #fff;
-padding: 12px 28px;
-border-radius: 8px;
-text-decoration: none;
-font-weight: 700;
-margin-top: 20px;
-}
-.btn:hover {
-background: linear-gradient(#a81818,#7f1212);
-}
-footer {
-background: #003366;
-color: #fff;
-text-align: center;
-padding: 22px 10px;
-font-size: 0.9rem;
-}
-</style>
-</head>
 
-<body>
-<header>
-<div class="brand">
-<img src="logo-medakom.PNG" alt="Medakom Logo">
-</div>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="vision.html">Vision</a></li>
-<li><a href="governance.html">Governance</a></li>
-<li><a href="leadership.html">Leadership</a></li>
-<li><a href="licenses.html">Licenses</a></li>
-<li><a href="financials.html">Financials</a></li>
-<li><a href="customers.html">Customers</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
+/* Menu rapat ke kanan */
+nav{justify-self: end;}
+nav ul{
+margin: 0; padding: 0; list-style: none;
+display: flex; gap: 22px; flex-wrap: wrap; justify-content: flex-end;
+}
+nav a{color:#000; text-decoration:none; font-weight:700; font-size:1rem}
+nav a:hover{color:#b31b1b}
 
-<section class="hero">
-<h1>MEDAKOM SDN. BHD.</h1>
-<h3>Empowering People, Building Futures</h3>
-<p>Sustainable Environment for Future Generations</p>
-<a href="contact.html" class="btn">Contact Us</a>
-</section>
-
-<footer>
-© 2025 Medakom Sdn. Bhd. — All Rights Reserved • Designed by Shella Chong
-</footer>
-</body>
-</html>
+/* Responsif mudah */
+@media (max-width: 980px){
+header{
+grid-template-columns: 1fr;
+row-gap: 10px; padding: 12px 4%;
+}
+.brand{justify-self:center;}
+.brand img{height: var(--logo-h-mobile);}
+nav ul{justify-content:center; gap: 16px;}
+}
