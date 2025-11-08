@@ -6,7 +6,7 @@
 <meta name="robots" content="index, follow" />
 <meta name="description" content="Medakom Sdn. Bhd. — Malaysian manpower & outsourcing company delivering compliant, ethical and sustainable workforce solutions: HR contracting, logistics, timber trading, palm oil & reforestation management, industrial support and cleaning services." />
 <meta name="keywords" content="Medakom, manpower, outsourcing, recruitment, contractor, timber trading, palm oil, reforestation, logistics, cleaning services, Malaysia" />
-<meta name="author" content="Mrs. Shella Chong (Melawati)" />
+<meta name="author" content="Mrs. Shella Chong" />
 <title>MEDAKOM SDN. BHD. | Official Corporate Website</title>
 
 <style>
@@ -18,7 +18,7 @@ html,body{margin:0;padding:0;scroll-behavior:smooth}
 --text:#222; --muted:#666; --card:#fff;
 --shadow:0 6px 18px rgba(0,0,0,.10);
 --radius:14px; --maxw:1140px;
---logo-h-desktop:160px; --logo-h-mobile:92px;
+--logo-h-desktop:180px; --logo-h-mobile:110px;
 }
 body{
 font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
@@ -27,96 +27,64 @@ background:linear-gradient(to bottom,var(--sky-top),var(--sky-bottom));
 -webkit-font-smoothing:antialiased;
 }
 
-header{
-width:100%;
-background:#fff;
-position:sticky; top:0; z-index:999;
-box-shadow:0 2px 12px rgba(0,0,0,.08);
-}
-.head-inner{
-max-width:1400px; margin:0 auto; padding:10px 4%;
-display:flex; align-items:center; justify-content:space-between; gap:24px;
-}
+/* HEADER */
+header{width:100%;background:#fff;position:sticky;top:0;z-index:999;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.head-inner{max-width:1440px;margin:0 auto;padding:10px 4%;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{flex:0 0 auto}
-.brand img{
-height:var(--logo-h-desktop);
-width:auto; object-fit:contain; display:block; mix-blend-mode:multiply;
-margin-left:0;
-}
+.brand img{height:var(--logo-h-desktop);width:auto;object-fit:contain;display:block;mix-blend-mode:multiply}
 nav{flex:1 1 auto}
-nav ul{
-margin:0; padding:0; list-style:none;
-display:flex; gap:28px; flex-wrap:wrap; justify-content:flex-end; align-items:center;
-}
-nav a{
-text-decoration:none; color:#000; font-weight:800; letter-spacing:.8px;
-font-size:17px; transition:color .18s ease;
-}
+nav ul{margin:0;padding:0;list-style:none;display:flex;gap:28px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+nav a{text-decoration:none;color:#000;font-weight:800;letter-spacing:.8px;font-size:17px;transition:color .18s ease}
 nav a:hover{color:var(--accent)}
 
-section{scroll-margin-top:128px}
-.section{padding:70px 6%; display:flex; justify-content:center}
-.card{
-width:100%; max-width:var(--maxw); background:var(--card);
-border-radius:var(--radius); box-shadow:var(--shadow); padding:42px 34px;
-}
-.title{
-text-align:center; color:var(--deep); font-size:2rem; font-weight:900; margin:0 0 12px; letter-spacing:.3px;
-}
-.lead{margin:4px 0 22px; text-align:center; color:var(--muted)}
-.twocol{display:grid; grid-template-columns:1fr 1fr; gap:28px}
-.bullets{margin:0; padding-left:18px}
+/* GENERIC */
+section{scroll-margin-top:140px}
+.section{padding:70px 6%;display:flex;justify-content:center}
+.card{width:100%;max-width:var(--maxw);background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:42px 34px}
+.title{text-align:center;color:var(--deep);font-size:2rem;font-weight:900;margin:0 0 12px;letter-spacing:.3px}
+.lead{margin:4px 0 22px;text-align:center;color:var(--muted)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.bullets{margin:0;padding-left:18px}
 .bullets li{margin:8px 0}
-.sep{height:1px; background:#eee; margin:28px 0}
+.sep{height:1px;background:#eee;margin:28px 0}
 
-#home{
-text-align:center; padding:150px 8% 120px;
-background:linear-gradient(to bottom,var(--sky-top),#fff 70%);
-}
-.hero-title{font-size:3.2rem; font-weight:900; color:var(--deep); margin:0 0 10px}
-.hero-line{font-size:1.5rem; font-weight:700; color:var(--mid)}
-.hero-sub{color:var(--muted); margin-top:10px}
-.btn{
-display:inline-block; margin-top:26px; padding:12px 28px; border-radius:8px;
-color:#fff; background:linear-gradient(#cc1f1f,#a81818); text-decoration:none; font-weight:700;
-box-shadow:0 4px 10px rgba(0,0,0,.18)
-}
+/* HERO */
+#home{text-align:center;padding:150px 8% 120px;background:linear-gradient(to bottom,var(--sky-top),#fff 70%)}
+.hero-title{font-size:3.2rem;font-weight:900;color:var(--deep);margin:0 0 10px}
+.hero-line{font-size:1.5rem;font-weight:700;color:var(--mid)}
+.hero-sub{color:var(--muted);margin-top:10px}
+.btn{display:inline-block;margin-top:26px;padding:12px 28px;border-radius:8px;color:#fff;background:linear-gradient(#cc1f1f,#a81818);text-decoration:none;font-weight:700;box-shadow:0 4px 10px rgba(0,0,0,.18)}
 .btn:hover{background:linear-gradient(#a81818,#7f1212)}
 
-table{width:100%; border-collapse:collapse; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.06)}
-th,td{padding:12px 14px; border:1px solid #e6e6e6; text-align:left}
-thead th{background:#eef4ff; color:#0f2c5c}
+/* TABLE */
+table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+th,td{padding:12px 14px;border:1px solid #e6e6e6;text-align:left}
+thead th{background:#eef4ff;color:#0f2c5c}
 
-.grid{display:flex; flex-wrap:wrap; justify-content:center; gap:12px}
-.thumb{
-width:220px; height:160px; object-fit:cover; border-radius:10px; cursor:pointer;
-box-shadow:0 3px 10px rgba(0,0,0,.18); transition:transform .22s
-}
+/* GALLERY */
+.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.thumb{width:220px;height:160px;object-fit:cover;border-radius:10px;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.18);transition:transform .22s}
 .thumb:hover{transform:scale(1.05)}
-.lightbox{position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; padding:24px; z-index:2000}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:24px;z-index:2000}
 .lightbox.active{display:flex}
-.lightbox-inner{max-width:92%; max-height:86%; position:relative}
-.lightbox-inner img{width:100%; height:auto; max-height:86vh; border-radius:12px; background:#fff}
-.lightbox-close{
-position:absolute; top:-10px; right:-10px; width:30px; height:30px; border-radius:50%;
-background:#fff; color:#000; display:flex; align-items:center; justify-content:center;
-font-weight:900; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.4)
-}
+.lightbox-inner{max-width:92%;max-height:86%;position:relative}
+.lightbox-inner img{width:100%;height:auto;max-height:86vh;border-radius:12px;background:#fff}
+.lightbox-close{position:absolute;top:-10px;right:-10px;width:30px;height:30px;border-radius:50%;background:#fff;color:#000;display:flex;align-items:center;justify-content:center;font-weight:900;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.4)}
 
-.email{color:var(--mid); font-weight:700; text-decoration:none}
+/* LINKS / FOOTER */
+.email{color:var(--mid);font-weight:700;text-decoration:none}
 .email:hover{color:var(--accent)}
-footer{background:var(--deep); color:#fff; text-align:center; padding:28px 10px; font-size:.9rem}
+footer{background:var(--deep);color:#fff;text-align:center;padding:28px 10px;font-size:.9rem}
 
-@media(max-width:1100px){
-.brand img{height:140px}
-}
+/* RESPONSIVE */
+@media(max-width:1100px){.brand img{height:160px}}
 @media(max-width:980px){
-.head-inner{flex-direction:column; padding:12px 4%}
+.head-inner{flex-direction:column;padding:12px 4%}
 .brand img{height:var(--logo-h-mobile)}
-nav ul{justify-content:center; gap:18px}
+nav ul{justify-content:center;gap:18px}
 #home{padding:120px 6% 90px}
 .hero-title{font-size:2.4rem}
-.thumb{width:180px; height:130px}
+.thumb{width:180px;height:130px}
 .twocol{grid-template-columns:1fr}
 }
 </style>
@@ -298,7 +266,7 @@ nav ul{justify-content:center; gap:18px}
 <div class="card">
 <h2 class="title">Our Customers & Strategic Partners</h2>
 <p class="lead">Selected clients served by Medakom across aviation, plantation, F&B, manufacturing and logistics:</p>
-<p style="text-align:center; line-height:2">
+<p style="text-align:center;line-height:2">
 AirAsia • Malaysia Airlines • POS Aviation • Felcra Berhad • KK Mart • 99 Speedmart • 7-Eleven • PappaRich • Secret Recipe • Top Glove • Castwell • Yamagata • RubbereX • Dongwha • BSSB • Puncak Niaga • Danum Sinar Sdn. Bhd. • Malaysia Airports (UTW) • Kayaku Safety Systems Malaysia • SHC Precision Co. Ltd.
 </p>
 </div>
@@ -344,8 +312,7 @@ Danum Sinar Land, Lakin / Klayan Estate,<br>
 <a class="email" href="mailto:hr@medakomhq.com.my">hr@medakomhq.com.my</a><br>
 <a class="email" href="mailto:medakomhq@gmail.com">medakomhq@gmail.com</a>
 </p>
-<p><b>Office:</b> +60 16-868 1998<br>
-<b>Phone:</b> +60 11-2327 7465</p>
+<p><b>Office:</b> +60 16-868 1998<br><b>Phone:</b> +60 11-2327 7465</p>
 <p><b>Website:</b> <a class="email" href="https://www.medakomhq.com.my">www.medakomhq.com.my</a></p>
 </div>
 </div>
@@ -354,7 +321,7 @@ Danum Sinar Land, Lakin / Klayan Estate,<br>
 
 <footer>
 <div>“Medakom Sdn. Bhd. continues to serve Malaysia’s key industries with integrity, responsibility, and excellence.”</div>
-<div style="margin-top:6px">© 2025 Medakom Sdn. Bhd. — All Rights Reserved • Designed by Mrs. Shella Chong (Melawati)</div>
+<div style="margin-top:6px">© 2025 Medakom Sdn. Bhd. — All Rights Reserved • Designed by Mrs. Shella Chong</div>
 </footer>
 
 <script>
